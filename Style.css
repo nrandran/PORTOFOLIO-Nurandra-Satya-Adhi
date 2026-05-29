@@ -1,321 +1,86 @@
-/* ================= GLOBAL ================= */
+/* Custom Font Tweaks ala Apple */
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f8fafc;
-  color: #1f2933;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* ================= HEADER ================= */
-header {
-  position: relative;
-  text-align: center;
-  padding: 10px 20px;
-  overflow: hidden;
+/* Smooth Scrolling untuk klik dari Navbar */
+html {
+    scroll-behavior: smooth;
 }
 
-/* banner image */
-header img.profile {
-  width: 110%;
-  height: 800px;
-  object-fit: cover;
-  display: block;
-  border: none;
+/* Ken Burns Effect untuk gambar profil di Hero Section (Zoom halus otomatis) */
+@keyframes kenburns {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.08);
+    }
+}
+.animate-kenburns {
+    animation: kenburns 20s ease-out forwards;
 }
 
-/* text positioning */
-header h1,
-header p {
-  position: absolute;
-  left: 8%; /* pindah ke kiri */
-  transform: translateY(-50%);
-  color: #3b82f6;
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  background: rgba(255, 255, 255, 0.8);
-  max-width: 500px;
+/* Filter cerdas untuk gambar portofolio agar kontrasnya mewah */
+img:not(.w-6) { /* Kecuali icon sosmed */
+    filter: saturate(1.05) contrast(1.02);
 }
 
-/* posisi vertikal */
-header h1 {
-  top: 51%;
-  font-size: 26px;
+/* Membatasi baris text agar tidak berantakan di mobile */
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
 }
 
-header p {
-  top: 65%;
-  font-size: 15px;
-  line-height: 1.6;
-}
-/* profile kecil (kalau dipakai di tempat lain) */
-.profile {
-  width: 140px;
-  height: 120px;
-  object-fit: cover;
-  border: 4px solid #38bdf8;
-  margin-bottom: -80px;
+/* Glassmorphism Navbar Fallback untuk browser lama */
+@supports not (backdrop-filter: blur(12px)) {
+    nav {
+        background-color: rgba(255, 255, 255, 0.95);
+    }
 }
 
-/* animasi background */
-header::before {
-  content: '';
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  background: #38bdf8;
-  border-radius: 50%;
-  top: -80px;
-  left: -80px;
-  filter: blur(80px);
-  animation: floatLeft 6s ease-in-out infinite;
+/* Responsif Spesifik iPhone 12 Pro (390px) */
+@media (max-width: 390px) {
+    h1 {
+        font-size: 3.2rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    .text-4xl {
+        font-size: 2.2rem !important;
+    }
+
+    /* Padding kiri kanan lebih tipis di mobile */
+    main {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
 }
 
-header::after {
-  content: '';
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  background: #6366f1;
-  border-radius: 50%;
-  bottom: -80px;
-  right: -80px;
-  filter: blur(80px);
-  animation: floatRight 6s ease-in-out infinite;
-}
+/* ================= PENGATURAN KHUSUS CETAK PDF ================= */
+@media print {
+    /* Paksa semua animasi AOS muncul penuh di PDF */
+    [data-aos] {
+        opacity: 1 !important;
+        transform: translate(0) scale(1) !important;
+    }
+    
+    /* Sembunyikan Navbar karena tidak bisa di-klik di PDF */
+    nav {
+        display: none !important;
+    }
 
-/* ================= IMAGE ================= */
-.single-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
+    /* Pastikan warna latar dan background tetap tercetak */
+    body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
 
-.single-image img {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* ================= SECTION ================= */
-section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-h2 {
-  margin-bottom: 20px;
-}
-
-/* ================= GRID ================= */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-/* ================= CARD ================= */
-.card {
-  background: #f1f5f9;
-  border-radius: 15px;
-  overflow: hidden;
-  border: 1px solid #e2e8f0;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
-}
-
-.card-content {
-  padding: 15px;
-}
-
-/* ================= ITEM ================= */
-.item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-}
-
-.item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.4s;
-}
-
-.item:hover img {
-  transform: scale(1.05);
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 15px;
-  background: linear-gradient(to top, rgba(30, 41, 59, 0.85), transparent);
-  color: #fff;
-}
-
-/* ================= FRAME ================= */
-.frame-916 {
-  aspect-ratio: 9/16;
-}
-.frame-34 {
-  aspect-ratio: 3/4;
-}
-.frame-169 {
-  aspect-ratio: 16/9;
-}
-
-/* ================= LINK ================= */
-a {
-  color: #3b82f6;
-  text-decoration: none;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  text-align: center;
-  padding: 30px;
-  background: #e2e8f0;
-  color: #475569;
-}
-
-/* ================= SECTION TITLE ================= */
-.section-title {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 30px;
-}
-
-.section-title h2 {
-  color: #3b82f6;
-  font-size: 28px;
-}
-
-.section-title p {
-  color: #64748b;
-  line-height: 1.6;
-}
-
-/* ================= CONTACT ================= */
-.contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-  transition: 0.3s;
-}
-
-.contact-item:hover {
-  transform: translateX(5px);
-}
-
-.contact-item img {
-  width: 20px;
-  height: 20px;
-}
-
-.contact-item a {
-  color: #3b82f6;
-}
-
-/* ================= PROJECT ================= */
-.project-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.project-item {
-  display: flex;
-  gap: 15px;
-  background: #f1f5f9;
-  padding: 15px;
-  border-radius: 5px;
-  align-items: center;
-  border: 1px solid #e2e8f0;
-  transition: 0.3s;
-}
-
-.project-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
-}
-
-.project-item img {
-  width: 220px;
-  height: 247px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.project-info h3 {
-  margin: 0;
-  color: #3b82f6;
-}
-
-.project-info p {
-  font-size: 14px;
-  color: #64748b;
-}
-
-/* ================= BUTTON ================= */
-.link-btn {
-  padding: 8px 14px;
-  border-radius: 8px;
-  background: #3b82f6;
-  color: #fff;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.link-btn:hover {
-  background: #2563eb;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-@media (max-width: 600px) {
-  header {
-    padding: 40px 15px;
-  }
-
-  section {
-    padding: 30px 15px;
-  }
-
-  .project-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .project-item img {
-    width: 100%;
-    height: auto;
-  }
-
-  .grid {
-    gap: 12px;
-  }
+    /* Hindari section terpotong setengah di halaman PDF */
+    section {
+        page-break-inside: avoid;
+    }
 }
