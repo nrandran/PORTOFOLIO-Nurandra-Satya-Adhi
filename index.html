@@ -117,7 +117,7 @@
 
     <main class="max-w-[1200px] mx-auto px-6 py-24 space-y-32">
 
-        <!-- ================= WORK EXPERIENCE (REDESIGNED FOR HRD/CLIENT) ================= -->
+        <!-- ================= WORK EXPERIENCE ================= -->
         <section id="experience" class="scroll-mt-24">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-gray-900">Enterprise Experience.</h2>
@@ -206,8 +206,9 @@
                             <li class="flex items-start gap-3 text-gray-700"><svg class="w-6 h-6 text-green-500 shrink-0 icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <b>E-Payslip</b> (Lihat dan unduh slip gaji PDF instan).</li>
                         </ul>
                     </div>
+                    <!-- UKURAN GAMBAR TECHTON MOBILE SUDAH DIPERBESAR (max-w-[380px] md:max-w-[420px]) -->
                     <div class="order-1 lg:order-2 bg-[#f5f5f7] rounded-3xl p-6 md:p-10 flex justify-center items-center h-full">
-                        <img src="aset/TECHTON%20MOBILE.png" alt="TechTon Mobile App" class="w-full max-w-[280px] h-auto rounded-[32px] shadow-2xl object-cover hover:scale-105 transition-transform duration-500">
+                        <img src="aset/TECHTON%20MOBILE.png" alt="TechTon Mobile App" class="w-full max-w-[380px] md:max-w-[420px] h-auto rounded-[32px] shadow-2xl object-cover hover:scale-105 transition-transform duration-500">
                     </div>
                 </div>
 
@@ -401,43 +402,44 @@
             </div>
         </section>
 
-        <!-- ================= CREATIVE TALENT ================= -->
+        <!-- ================= CREATIVE TALENT (SUSUNAN & RASIO MOBILE DISESUAIKAN) ================= -->
         <section id="talent">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-gray-900">Creative Talent.</h2>
                 <p class="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto">Aktif di depan layar dalam industri kreatif untuk promosi digital kampus.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Talent 1 (Besar) -->
-                <div class="md:col-span-2 md:row-span-2 relative group rounded-[32px] overflow-hidden bg-[#f5f5f7] min-h-[350px] md:min-h-[450px] flex items-center justify-center p-8 border border-gray-200/50" data-aos="zoom-in" data-aos-delay="100">
+            <!-- Diubah menjadi 2 kolom padat di mobile -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+                <!-- Talent 1 (Besar/Paling Atas) -->
+                <div class="col-span-2 md:row-span-2 relative group rounded-[20px] md:rounded-[32px] overflow-hidden bg-[#f5f5f7] h-[220px] md:h-auto md:min-h-[450px] flex items-center justify-center p-4 md:p-8 border border-gray-200/50" data-aos="zoom-in" data-aos-delay="100">
                     <img src="aset/PENGALAMAN TALENT (1).png" class="w-full h-full object-contain drop-shadow-lg group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8 pointer-events-none">
-                        <p class="text-white font-bold text-xl drop-shadow-md">TikTok Kampus Talent</p>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-5 md:p-8 pointer-events-none">
+                        <p class="text-white font-bold text-lg md:text-xl drop-shadow-md">TikTok Kampus Talent</p>
                     </div>
                 </div>
                 
-                <!-- Talent 2 (Kecil) -->
-                <div class="relative group rounded-[32px] overflow-hidden bg-[#f5f5f7] min-h-[220px] flex items-center justify-center p-5 border border-gray-200/50" data-aos="zoom-in" data-aos-delay="200">
+                <!-- Talent 2 (Kecil - Kiri) -->
+                <div class="col-span-1 relative group rounded-[20px] md:rounded-[32px] overflow-hidden bg-[#f5f5f7] h-[140px] md:h-[220px] flex items-center justify-center p-3 md:p-5 border border-gray-200/50" data-aos="zoom-in" data-aos-delay="200">
                     <img src="aset/PENGALAMAN TALENT (2).png" class="w-full h-full object-contain drop-shadow-md group-hover:scale-105 transition duration-500 rounded-xl">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center pb-5 pointer-events-none">
-                        <p class="text-white font-semibold text-sm drop-shadow-md">Teaser Ospek UII</p>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center pb-3 md:pb-5 pointer-events-none">
+                        <p class="text-white font-semibold text-xs md:text-sm text-center drop-shadow-md">Teaser Ospek UII</p>
                     </div>
                 </div>
 
-                <!-- Talent 3 (Kecil) -->
-                <div class="relative group rounded-[32px] overflow-hidden bg-[#f5f5f7] min-h-[220px] flex items-center justify-center p-5 border border-gray-200/50" data-aos="zoom-in" data-aos-delay="300">
+                <!-- Talent 3 (Kecil - Kanan) -->
+                <div class="col-span-1 relative group rounded-[20px] md:rounded-[32px] overflow-hidden bg-[#f5f5f7] h-[140px] md:h-[220px] flex items-center justify-center p-3 md:p-5 border border-gray-200/50" data-aos="zoom-in" data-aos-delay="300">
                     <img src="aset/PENGALAMAN TALENT (3).png" class="w-full h-full object-contain drop-shadow-md group-hover:scale-105 transition duration-500 rounded-xl">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center pb-5 pointer-events-none">
-                        <p class="text-white font-semibold text-sm drop-shadow-md">Promosi TikTok</p>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center pb-3 md:pb-5 pointer-events-none">
+                        <p class="text-white font-semibold text-xs md:text-sm text-center drop-shadow-md">Promosi TikTok</p>
                     </div>
                 </div>
                 
-                <!-- Talent 4 (Lebar) -->
-                <div class="md:col-span-2 relative group rounded-[32px] overflow-hidden bg-[#f5f5f7] min-h-[220px] flex items-center justify-center p-8 border border-gray-200/50" data-aos="zoom-in" data-aos-delay="400">
+                <!-- Talent 4 (Bawah/Lebar) -->
+                <div class="col-span-2 relative group rounded-[20px] md:rounded-[32px] overflow-hidden bg-[#f5f5f7] h-[160px] md:h-[220px] flex items-center justify-center p-4 md:p-8 border border-gray-200/50" data-aos="zoom-in" data-aos-delay="400">
                     <img src="aset/PENGALAMAN TALENT (4).png" class="w-full h-full object-contain drop-shadow-lg group-hover:scale-105 transition duration-500 rounded-xl">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6 pointer-events-none">
-                        <p class="text-white font-bold drop-shadow-md">Konten Edukatif Kampus</p>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-5 md:p-6 pointer-events-none">
+                        <p class="text-white font-bold text-sm md:text-base drop-shadow-md">Konten Edukatif Kampus</p>
                     </div>
                 </div>
             </div>
