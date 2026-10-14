@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Nurandra Satya Adhi — Full-Stack Developer | HRIS, Payroll &amp; SSO</title>
+    <meta name="description" content="Portofolio Nurandra Satya Adhi, Full-Stack Developer lulusan S1 Informatika UII (IPK 3,63). Membangun ekosistem HRIS end-to-end di Toton Group: GAIA Core (SSO), TechTon PAS Portal, dan TechTon PAS Mobile (Android & iOS).">
+    <meta name="author" content="Nurandra Satya Adhi">
+    <meta name="theme-color" content="#09090b">
+    <link rel="canonical" href="https://portofolio-nurandra-satya-adhi.vercel.app/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:title" content="Nurandra Satya Adhi — Full-Stack Developer">
+    <meta property="og:description" content="HRIS, Payroll, SSO, Web &amp; Mobile. 5 sistem dirancang dan dibangun sendiri, 3 platform, 1 login untuk banyak aplikasi.">
+    <meta property="og:url" content="https://portofolio-nurandra-satya-adhi.vercel.app/">
+    <meta property="og:image" content="https://portofolio-nurandra-satya-adhi.vercel.app/aset/web/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2309090b'/%3E%3Cpath d='M18 48V16h6l16 21V16h6v32h-6L24 27v21z' fill='%23ffb43b'/%3E%3C/svg%3E">
+
+    <!-- Aktifkan mode JS sedini mungkin supaya animasi reveal tidak berkedip -->
+    <script>document.documentElement.classList.add('js');</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="aset/web/hero.webp" fetchpriority="high">
+    <link rel="stylesheet" href="Style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nurandra Satya Adhi",
+      "jobTitle": "Full-Stack Developer",
+      "email": "mailto:nurandra770@gmail.com",
+      "telephone": "+6289649185124",
+      "url": "https://portofolio-nurandra-satya-adhi.vercel.app/",
+      "address": { "@type": "PostalAddress", "addressLocality": "Yogyakarta", "addressCountry": "ID" },
+      "worksFor": { "@type": "Organization", "name": "Toton Group" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universitas Islam Indonesia" },
+      "knowsAbout": ["HRIS", "Payroll", "Single Sign-On", "RBAC", "Laravel", "PHP", "Flutter", "MySQL"]
+    }
+    </script>
+</head>
+
+<body>
+
+<!-- ============ SVG ICON SPRITE ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+        <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></symbol>
+        <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM22 6l-10 7L2 6"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+        <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c3 3 9 3 12 0v-5M22 10v6"/></symbol>
+        <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+        <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></symbol>
+        <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+        <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+        <symbol id="i-tools" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/></symbol>
+        <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></symbol>
+        <symbol id="i-fingerprint" viewBox="0 0 24 24"><path d="M12 11a4 4 0 0 0-4 4c0 2 .5 4 1.5 6M12 7a8 8 0 0 0-8 8c0 2 .4 3.5 1 5M16 21c.5-1.5 1-3.5 1-6a5 5 0 0 0-10 0M20 20c.6-1.5 1-3 1-5a9 9 0 0 0-14.5-7M12 15v.5c0 2 .3 3.5.8 5"/></symbol>
+        <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+        <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+        <symbol id="i-present" viewBox="0 0 24 24"><path d="M2 3h20M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3M12 16v5M8 21h8"/></symbol>
+        <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+        <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+        <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89L17 22l-5-3-5 3 1.52-9.11"/></symbol>
+        <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></symbol>
+        <symbol id="i-mega" viewBox="0 0 24 24"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1zM15.5 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12"/></symbol>
+        <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"/></symbol>
+        <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 4 13c0-6 5-9 16-9 0 11-3 16-9 16zM4 21c2-5 5-8 9-10"/></symbol>
+        <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+        <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M6 9v3a3 3 0 0 0 3 3h6"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+        <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+        <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+        <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+    </defs>
+</svg>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav" id="nav">
+    <div class="container nav-in">
+        <a href="#top" class="brand" aria-label="Kembali ke atas">
+            <span class="brand-mark">NSA</span>
+            <span class="brand-name">Nurandra Satya Adhi</span>
+        </a>
+        <nav class="nav-links" id="navLinks" aria-label="Navigasi utama">
+            <a href="#keahlian">Keahlian</a>
+            <a href="#pengalaman">Pengalaman</a>
+            <a href="#layanan">Layanan</a>
+            <a href="#akademik">Proyek Akademik</a>
+            <a href="#bisnis">Di Luar Kode</a>
+        </nav>
+        <a class="btn btn-primary btn-sm nav-cta" href="#kontak">Hubungi saya</a>
+        <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#keahlian">Keahlian</a>
+    <a href="#pengalaman">Pengalaman</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#akademik">Proyek Akademik</a>
+    <a href="#bisnis">Di Luar Kode</a>
+    <a href="#kontak" class="mm-cta">Hubungi saya <svg class="i"><use href="#i-arrow-right"/></svg></a>
+</div>
+
+<main id="top">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="hero">
+        <div class="hero-bg" aria-hidden="true">
+            <div class="glow glow-a" data-mode="scroll" data-speed="0.18"></div>
+            <div class="glow glow-b" data-mode="scroll" data-speed="0.32"></div>
+            <div class="grid-lines"></div>
+        </div>
+        <div class="hero-giant" aria-hidden="true" data-mode="scroll" data-x="-0.22" data-speed="0.12"><span>FULL-STACK</span></div>
+
+        <div class="container hero-grid">
+            <div class="hero-copy" data-mode="scroll" data-speed="0.06">
+                <div class="badge hero-in" style="--i:0"><span class="dot"></span> Terbuka untuk peluang kerja &amp; proyek freelance</div>
+                <h1 class="hero-in" style="--i:1">
+                    <span class="h1-name">Nurandra<br>Satya Adhi</span>
+                    <span class="h1-role">Full-Stack Developer</span>
+                </h1>
+                <p class="lead hero-in" style="--i:2">
+                    Saya membangun ekosistem <strong>HRIS end-to-end</strong>: dari kebutuhan HRD, UI/UX, backend dan <strong>SSO</strong>, sampai aplikasi mobile Android &amp; iOS — <span class="hl">aman, terdokumentasi, dan langsung dipakai.</span>
+                </p>
+                <div class="hero-cta hero-in" style="--i:3">
+                    <a class="btn btn-primary" href="#pengalaman">Lihat karya saya <svg class="i"><use href="#i-arrow-down"/></svg></a>
+                    <a class="btn btn-ghost" href="CV-Nurandra-Satya-Adhi.pdf" download>Unduh CV <svg class="i"><use href="#i-download"/></svg></a>
+                </div>
+                <ul class="hero-facts hero-in" style="--i:4">
+                    <li><svg class="i"><use href="#i-briefcase"/></svg> Staff IT, Toton Group</li>
+                    <li><svg class="i"><use href="#i-cap"/></svg> S1 Informatika UII · IPK 3,63</li>
+                    <li><svg class="i"><use href="#i-pin"/></svg> Yogyakarta</li>
+                </ul>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-portrait hero-in-img" data-mode="scroll" data-speed="-0.07">
+                    <img src="aset/web/hero.webp" width="1100" height="1402" alt="Foto Nurandra Satya Adhi, Full-Stack Developer" fetchpriority="high">
+                </div>
+                <div class="float-chip fc-1" data-mode="scroll" data-speed="-0.2"><span class="bob"><svg class="i"><use href="#i-key"/></svg> Single Sign-On</span></div>
+                <div class="float-chip fc-2" data-mode="scroll" data-speed="-0.34"><span class="bob b2"><svg class="i"><use href="#i-shield"/></svg> RBAC &amp; Audit Trail</span></div>
+                <div class="float-chip fc-3" data-mode="scroll" data-speed="-0.14"><span class="bob b3"><svg class="i"><use href="#i-phone"/></svg> Flutter · Android &amp; iOS</span></div>
+                <div class="float-chip fc-4" data-mode="scroll" data-speed="-0.28"><span class="bob b4"><svg class="i"><use href="#i-zap"/></svg> PageSpeed 100</span></div>
+            </div>
+        </div>
+
+        <a class="scroll-cue" href="#ringkasan" aria-label="Gulir ke bawah"><span></span> Scroll</a>
+    </section>
+
+    <!-- Marquee tech -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>PHP (Laravel &amp; Native)</span><span>REST API</span><span>SSO</span><span>RBAC</span><span>Flutter</span><span>MySQL / MariaDB</span><span>PostgreSQL</span><span>JavaScript</span><span>React</span><span>Tailwind CSS</span><span>Figma</span><span>Postman</span><span>Git &amp; GitHub</span>
+            <span>PHP (Laravel &amp; Native)</span><span>REST API</span><span>SSO</span><span>RBAC</span><span>Flutter</span><span>MySQL / MariaDB</span><span>PostgreSQL</span><span>JavaScript</span><span>React</span><span>Tailwind CSS</span><span>Figma</span><span>Postman</span><span>Git &amp; GitHub</span>
+        </div>
+    </div>
+
+    <!-- ================= RINGKASAN PROFESIONAL ================= -->
+    <section class="sec" id="ringkasan">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="eyebrow"><i></i> 01 — Ringkasan profesional</span>
+            </div>
+
+            <p class="scrub" id="scrub">
+                Full-Stack Developer lulusan S1 Informatika UII yang membangun ekosistem HRIS end-to-end di Toton Group: <mark>GAIA Core</mark>, <mark>TechTon PAS Portal</mark>, dan <mark>TechTon PAS Mobile</mark>. Terbiasa mengubah kebutuhan HRD dan manajemen menjadi sistem yang aman, terdokumentasi, dan langsung dipakai, serta mempresentasikannya kepada <mark>upper management</mark>.
+            </p>
+
+            <div class="stats reveal">
+                <div class="stat">
+                    <b><span data-count="5">5</span></b>
+                    <span class="stat-t">Sistem</span>
+                    <span class="stat-d">dirancang &amp; dibangun sendiri</span>
+                </div>
+                <div class="stat">
+                    <b><span data-count="3">3</span></b>
+                    <span class="stat-t">Platform</span>
+                    <span class="stat-d">Web, Android &amp; iOS</span>
+                </div>
+                <div class="stat">
+                    <b><span data-count="1">1</span></b>
+                    <span class="stat-t">Login (SSO)</span>
+                    <span class="stat-d">akses terpusat banyak aplikasi</span>
+                </div>
+                <div class="stat">
+                    <b><span data-count="100">100</span></b>
+                    <span class="stat-t">Google PageSpeed</span>
+                    <span class="stat-d">website SMB-TGR</span>
+                </div>
+                <div class="stat">
+                    <b><span data-count="3.63" data-decimals="2">3,63</span></b>
+                    <span class="stat-t">IPK</span>
+                    <span class="stat-d">S1 Informatika UII</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KEAHLIAN ================= -->
+    <section class="sec" id="keahlian">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="eyebrow"><i></i> 02 — Keahlian teknis</span>
+                <h2>Tumpukan teknologi yang saya pakai <em>setiap hari.</em></h2>
+                <p>Dari database sampai tampilan di layar HP karyawan — satu orang yang paham seluruh alurnya.</p>
+            </div>
+
+            <div class="bento">
+                <article class="skill spot reveal" style="--d:.0s">
+                    <header><span class="sk-ico"><svg class="i"><use href="#i-server"/></svg></span><h3>Backend</h3></header>
+                    <ul class="chips"><li>PHP (Laravel &amp; Native)</li><li>MVC</li><li>REST API</li><li>Bearer Token</li><li>SSO</li><li>RBAC</li></ul>
+                </article>
+                <article class="skill spot reveal" style="--d:.08s">
+                    <header><span class="sk-ico"><svg class="i"><use href="#i-code"/></svg></span><h3>Frontend</h3></header>
+                    <ul class="chips"><li>JavaScript</li><li>jQuery</li><li>React</li><li>Bootstrap</li><li>Tailwind CSS</li><li>DataTables</li></ul>
+                </article>
+                <article class="skill spot reveal" style="--d:.16s">
+                    <header><span class="sk-ico"><svg class="i"><use href="#i-phone"/></svg></span><h3>Mobile</h3></header>
+                    <ul class="chips"><li>Flutter (Android &amp; iOS)</li><li>Biometrik</li><li>Fingerprint / Face ID</li></ul>
+                </article>
+                <article class="skill spot reveal" style="--d:.0s">
+                    <header><span class="sk-ico"><svg class="i"><use href="#i-database"/></svg></span><h3>Database</h3></header>
+                    <ul class="chips"><li>MySQL / MariaDB</li><li>PostgreSQL</li><li>Optimasi Query</li></ul>
+                </article>
+                <article class="skill spot reveal" style="--d:.08s">
+                    <header><span class="sk-ico"><svg class="i"><use href="#i-tools"/></svg></span><h3>Tools &amp; QA</h3></header>
+                    <ul class="chips"><li>Git &amp; GitHub</li><li>Postman</li><li>Figma</li><li>Black Box Testing</li><li>Linux</li></ul>
+                </article>
+                <article class="skill skill-domain spot reveal" style="--d:.16s">
+                    <header><span class="sk-ico"><svg class="i"><use href="#i-layers"/></svg></span><h3>Domain</h3></header>
+                    <ul class="chips"><li>HRIS</li><li>Payroll</li><li>Absensi</li><li>Cuti &amp; Lembur</li><li>Approval Workflow</li><li>Audit Trail</li></ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PENGALAMAN KERJA ================= -->
+    <section class="sec sec-work" id="pengalaman">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="eyebrow"><i></i> 03 — Pengalaman kerja</span>
+                <h2>Satu developer, <em>satu ekosistem</em> HRIS yang utuh.</h2>
+            </div>
+
+            <div class="company reveal">
+                <div class="company-main">
+                    <span class="company-mark">TG</span>
+                    <div>
+                        <h3>Staff IT <span>· Toton Group</span></h3>
+                        <p>Pengembangan sistem internal end-to-end, dari analisis kebutuhan sampai sistem live dan dipakai.</p>
+                    </div>
+                </div>
+                <span class="pill">Mei 2026 — Sekarang</span>
+            </div>
+
+            <ol class="pipeline reveal" aria-label="Alur pengerjaan">
+                <li>Analisis</li><li>UI/UX (Figma)</li><li>Backend</li><li>Integrasi</li><li>Testing</li><li>Hosting</li>
+            </ol>
+
+            <!-- Ekosistem diagram -->
+            <div class="eco" id="ekosistem">
+                <div class="eco-title reveal">
+                    <h3>Satu akun, banyak aplikasi.</h3>
+                    <p>GAIA Core adalah pusat identitas dan hak akses. Semua aplikasi di bawah ini <b>login lewat GAIA</b>, dan akses menunya diatur admin dari satu tempat.</p>
+                </div>
+                <div class="eco-grid">
+                    <div class="eco-core reveal">
+                        <div class="eco-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+                        <span class="eco-hex">G</span>
+                        <h4>GAIA Core</h4>
+                        <p>Identitas · SSO · RBAC · Master data HRIS</p>
+                    </div>
+                    <svg class="eco-lines" viewBox="0 0 100 300" preserveAspectRatio="none" aria-hidden="true">
+                        <path class="ln" d="M0 150 C 55 150, 45 50, 100 50"/>
+                        <path class="ln" d="M0 150 L 100 150"/>
+                        <path class="ln" d="M0 150 C 55 150, 45 250, 100 250"/>
+                    </svg>
+                    <div class="eco-apps">
+                        <a class="eco-app reveal" href="#portal" style="--c:#5b9bff;--d:.1s">
+                            <span class="ea-ico"><svg class="i"><use href="#i-globe"/></svg></span>
+                            <div><h4>TechTon PAS Portal</h4><p>HRIS Web untuk HRD &amp; Admin</p></div>
+                            <svg class="i go"><use href="#i-arrow-right"/></svg>
+                        </a>
+                        <a class="eco-app reveal" href="#mobile" style="--c:#3ddc97;--d:.2s">
+                            <span class="ea-ico"><svg class="i"><use href="#i-phone"/></svg></span>
+                            <div><h4>TechTon PAS Mobile</h4><p>Employee self-service · Android &amp; iOS</p></div>
+                            <svg class="i go"><use href="#i-arrow-right"/></svg>
+                        </a>
+                        <a class="eco-app reveal" href="#smbtgr" style="--c:#ffb43b;--d:.3s">
+                            <span class="ea-ico"><svg class="i"><use href="#i-layers"/></svg></span>
+                            <div><h4>SMB-TGR Portal &amp; Website</h4><p>Portal SSO per divisi · Landing page &amp; CMS</p></div>
+                            <svg class="i go"><use href="#i-arrow-right"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Chapter 01: GAIA Core ===== -->
+        <article class="chapter" id="gaia" style="--c:#ff8a3d;--c-rgb:255,138,61">
+            <div class="chapter-bg" aria-hidden="true"><div class="blob" data-speed="0.12"></div><span class="chapter-num" data-speed="0.18">01</span></div>
+            <div class="container chapter-grid">
+                <div class="chapter-copy">
+                    <div class="chapter-head reveal">
+                        <span class="tag">Core System · HRIS · SSO</span>
+                        <h3>GAIA Core</h3>
+                        <p class="lead">Platform HRIS inti dibangun dari nol: pusat data karyawan, identitas pengguna, dan Single Sign-On untuk seluruh aplikasi perusahaan.</p>
+                        <ul class="chips"><li>Figma</li><li>PHP MVC</li><li>MySQL / MariaDB</li><li>REST API</li><li>SSO</li><li>RBAC</li><li>Audit Trail</li></ul>
+                    </div>
+                    <div class="steps">
+                        <div class="step" data-layer="mock">
+                            <span class="step-n">1</span>
+                            <h4>Dibangun dari nol</h4>
+                            <p>Dari desain Figma, arsitektur MVC, sampai backend. Data karyawan lengkap, master unit, divisi dan jabatan, serta manajemen user dalam satu platform.</p>
+                        </div>
+                        <div class="step" data-layer="sso">
+                            <span class="step-n">2</span>
+                            <h4>SSO terpusat</h4>
+                            <p>Satu akun untuk banyak aplikasi. Karyawan tidak perlu mengingat banyak password, dan admin tidak perlu mengelola akun di banyak tempat.</p>
+                        </div>
+                        <div class="step" data-layer="rbac">
+                            <span class="step-n">3</span>
+                            <h4>RBAC berbasis grup role</h4>
+                            <p>Admin membuat role, memilih aplikasi dan menu yang boleh dibuka, lalu menambahkan anggota. <b>Hak akses diatur dari satu pusat.</b></p>
+                        </div>
+                        <div class="step" data-layer="audit">
+                            <span class="step-n">4</span>
+                            <h4>Aman, terdokumentasi, teruji</h4>
+                            <p>Keamanan API, Audit Trail dan riwayat data karyawan, import/ekspor Excel &amp; CSV yang aman, plus dokumentasi dan black box testing menyeluruh.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter-visual">
+                    <div class="visual-sticky" data-visual data-layer="mock">
+                        <div class="vs-glow" aria-hidden="true"></div>
+                        <img class="gaia-mock" src="aset/web/gaia-mockup.webp" width="1800" height="825" alt="Tampilan GAIA Core System: login, data karyawan, dan manajemen master data" loading="lazy">
+
+                        <figure class="browser ov ov-rbac" data-name="rbac">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url"><svg class="i"><use href="#i-lock"/></svg>gaia.smbtgr.dev/akses</span></div>
+                            <img src="aset/web/gaia-akses.webp" width="1279" height="632" alt="Halaman Manajemen Akses GAIA: role, aplikasi yang boleh dimasuki, dan jumlah menu" loading="lazy">
+                        </figure>
+
+                        <div class="ov ov-card ov-sso" data-name="sso">
+                            <div class="oc-head"><svg class="i"><use href="#i-key"/></svg> Satu login</div>
+                            <div class="sso-flow">
+                                <span class="sso-user">Karyawan</span>
+                                <svg class="i"><use href="#i-arrow-right"/></svg>
+                                <span class="sso-gaia">GAIA</span>
+                                <svg class="i"><use href="#i-arrow-right"/></svg>
+                                <span class="sso-apps"><em>TechTon Portal</em><em>TechTon Mobile</em><em>SMB-TGR</em></span>
+                            </div>
+                        </div>
+
+                        <div class="ov ov-card ov-audit" data-name="audit">
+                            <div class="oc-head"><svg class="i"><use href="#i-shield"/></svg> Audit Trail <small>ilustrasi</small></div>
+                            <ul class="audit">
+                                <li><i></i><span>Data karyawan diubah</span><em>siapa · kapan</em></li>
+                                <li><i></i><span>Role &amp; akses diperbarui</span><em>siapa · kapan</em></li>
+                                <li><i></i><span>Import Excel / CSV</span><em>tervalidasi</em></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ===== Chapter 02: TechTon PAS Portal ===== -->
+        <article class="chapter" id="portal" style="--c:#5b9bff;--c-rgb:91,155,255">
+            <div class="chapter-bg" aria-hidden="true"><div class="blob" data-speed="0.12"></div><span class="chapter-num" data-speed="0.18">02</span></div>
+            <div class="container chapter-grid">
+                <div class="chapter-copy">
+                    <div class="chapter-head reveal">
+                        <span class="tag">Web Application · HRIS</span>
+                        <h3>TechTon PAS Portal</h3>
+                        <p class="lead">HRIS berbasis web untuk HRD dan administrator: absensi, cuti &amp; lembur, sampai payroll, dengan approval berjenjang dan akses yang rapi.</p>
+                        <ul class="chips"><li>PHP</li><li>JavaScript</li><li>MySQL</li><li>DataTables</li><li>REST API</li><li>checkRBAC</li></ul>
+                    </div>
+                    <div class="steps">
+                        <div class="step" data-layer="absen">
+                            <span class="step-n">1</span>
+                            <h4>Absensi yang terkontrol</h4>
+                            <p>Lokasi kantor, indikator terlambat, filter unit/divisi, dan laporan per karyawan dengan export Excel / PDF.</p>
+                        </div>
+                        <div class="step" data-layer="approval">
+                            <span class="step-n">2</span>
+                            <h4>Cuti, izin &amp; lembur berjenjang</h4>
+                            <p>Alur approval multi-level yang <b>dapat dikonfigurasi</b> mengikuti struktur perusahaan.</p>
+                        </div>
+                        <div class="step" data-layer="payroll">
+                            <span class="step-n">3</span>
+                            <h4>Payroll, kasbon &amp; tutup periode</h4>
+                            <p>Komponen dan formula gaji (AST), kasbon / pinjaman, serta tutup periode dengan validasi transaksi backdate.</p>
+                        </div>
+                        <div class="step" data-layer="slip">
+                            <span class="step-n">4</span>
+                            <h4>Slip gaji digital yang aman</h4>
+                            <p>PDF dengan watermark anti-manipulasi dan PIN, bisa diakses dari web maupun mobile.</p>
+                        </div>
+                        <div class="step" data-layer="perf">
+                            <span class="step-n">5</span>
+                            <h4>Cepat dan aman</h4>
+                            <p>Server-side pagination untuk data besar, <code>checkRBAC</code> di semua controller, dan asisten AI chat untuk membantu pengguna.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter-visual">
+                    <div class="visual-sticky" data-visual data-layer="absen">
+                        <div class="vs-glow" aria-hidden="true"></div>
+                        <figure class="browser base">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url"><svg class="i"><use href="#i-lock"/></svg>pas.smbtgr.dev/dashboard</span></div>
+                            <img src="aset/web/techton-portal.webp" width="1279" height="629" alt="Dashboard TechTon PAS Portal: menu absensi, cuti &amp; izin, lembur, slip gaji, dan AI chat bantuan" loading="lazy">
+                        </figure>
+
+                        <div class="ov ov-card ov-a" data-name="absen">
+                            <div class="oc-head"><svg class="i"><use href="#i-pin"/></svg> Absensi <small>ilustrasi</small></div>
+                            <ul class="mini-list">
+                                <li><span class="ok">●</span> Dalam radius lokasi kantor</li>
+                                <li><span class="warn">●</span> Terlambat ditandai otomatis</li>
+                                <li><span class="info">●</span> Export Excel / PDF</li>
+                            </ul>
+                        </div>
+
+                        <div class="ov ov-card ov-b" data-name="approval">
+                            <div class="oc-head"><svg class="i"><use href="#i-flow"/></svg> Approval berjenjang <small>ilustrasi</small></div>
+                            <div class="approval">
+                                <span>Karyawan<small>mengajukan</small></span>
+                                <svg class="i"><use href="#i-arrow-right"/></svg>
+                                <span>Atasan<small>level 1</small></span>
+                                <svg class="i"><use href="#i-arrow-right"/></svg>
+                                <span>HRD<small>level n</small></span>
+                            </div>
+                        </div>
+
+                        <div class="ov ov-card ov-c" data-name="payroll">
+                            <div class="oc-head"><svg class="i"><use href="#i-file"/></svg> Payroll <small>ilustrasi</small></div>
+                            <div class="formula"><b>Take-home</b> = Gaji pokok <i>+</i> Tunjangan <i>−</i> Potongan <i>−</i> Cicilan kasbon</div>
+                            <div class="mini-tags"><span>Formula (AST)</span><span>Kasbon</span><span>Tutup periode</span></div>
+                        </div>
+
+                        <div class="ov ov-card ov-d" data-name="slip">
+                            <div class="oc-head"><svg class="i"><use href="#i-lock"/></svg> Slip gaji PDF <small>ilustrasi</small></div>
+                            <div class="slip">
+                                <div class="slip-doc"><i></i><i></i><i></i><i></i><span>WATERMARK</span></div>
+                                <div class="slip-pin"><small>Masukkan PIN</small><span><i></i><i></i><i></i><i></i></span></div>
+                            </div>
+                        </div>
+
+                        <div class="ov ov-card ov-e" data-name="perf">
+                            <div class="oc-head"><svg class="i"><use href="#i-zap"/></svg> Performa &amp; keamanan</div>
+                            <div class="mini-tags"><span>Server-side pagination</span><span>checkRBAC()</span><span>AI Chat Bantuan</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ===== Chapter 03: TechTon PAS Mobile ===== -->
+        <article class="chapter" id="mobile" style="--c:#3ddc97;--c-rgb:61,220,151">
+            <div class="chapter-bg" aria-hidden="true"><div class="blob" data-speed="0.12"></div><span class="chapter-num" data-speed="0.18">03</span></div>
+            <div class="container chapter-grid chapter-flip">
+                <div class="chapter-copy">
+                    <div class="chapter-head reveal">
+                        <span class="tag">Mobile Application · Android &amp; iOS</span>
+                        <h3>TechTon PAS Mobile</h3>
+                        <p class="lead">Aplikasi employee self-service dibangun dengan Flutter dari nol. Karyawan mengurus absensi, pengajuan, dan slip gaji langsung dari genggaman.</p>
+                        <ul class="chips"><li>Flutter</li><li>REST API</li><li>Postman</li><li>SSO</li><li>Biometrik</li></ul>
+                    </div>
+                    <div class="steps">
+                        <div class="step" data-layer="bio">
+                            <span class="step-n">1</span>
+                            <h4>Login SSO + biometrik</h4>
+                            <p>Masuk dengan akun SSO yang dikunci Fingerprint / Face ID, dilengkapi validasi keamanan perangkat.</p>
+                        </div>
+                        <div class="step" data-layer="cam">
+                            <span class="step-n">2</span>
+                            <h4>Absensi dengan foto</h4>
+                            <p>Dashboard personal dan absensi mobile, dengan kompresi otomatis foto absensi agar ringan dikirim.</p>
+                        </div>
+                        <div class="step" data-layer="req">
+                            <span class="step-n">3</span>
+                            <h4>Pengajuan &amp; approval atasan</h4>
+                            <p>Ajukan cuti, izin, dan lembur. Atasan menyetujui langsung dari aplikasi.</p>
+                        </div>
+                        <div class="step" data-layer="pay">
+                            <span class="step-n">4</span>
+                            <h4>Slip gaji PDF dengan PIN</h4>
+                            <p>Lihat dan unduh slip gaji kapan saja, dilindungi PIN.</p>
+                        </div>
+                        <div class="step" data-layer="rel">
+                            <span class="step-n">5</span>
+                            <h4>Dirilis ke iOS &amp; Android</h4>
+                            <p>REST API diamankan dan diuji dengan Postman, dirilis ke iOS dengan tampilan responsif untuk iPhone.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter-visual">
+                    <div class="visual-sticky" data-visual data-layer="bio">
+                        <div class="vs-glow" aria-hidden="true"></div>
+                        <div class="phone base">
+                            <span class="phone-notch"></span>
+                            <img src="aset/web/techton-mobile.webp" width="720" height="1456" alt="Beranda aplikasi TechTon PAS Mobile: absensi hari ini, pengumuman, dan menu" loading="lazy">
+                        </div>
+
+                        <div class="ov ov-card ov-m1" data-name="bio">
+                            <div class="oc-head"><svg class="i"><use href="#i-fingerprint"/></svg> Biometrik</div>
+                            <div class="bio"><span class="bio-ring"><svg class="i"><use href="#i-fingerprint"/></svg></span><p>Fingerprint / Face ID<br><small>+ validasi keamanan perangkat</small></p></div>
+                        </div>
+                        <div class="ov ov-card ov-m2" data-name="cam">
+                            <div class="oc-head"><svg class="i"><use href="#i-camera"/></svg> Absensi foto</div>
+                            <ul class="mini-list"><li><span class="ok">●</span> Foto diambil saat absen</li><li><span class="info">●</span> Dikompres otomatis</li></ul>
+                        </div>
+                        <div class="ov ov-card ov-m3" data-name="req">
+                            <div class="oc-head"><svg class="i"><use href="#i-cal"/></svg> Pengajuan</div>
+                            <div class="mini-tags"><span>Cuti</span><span>Izin</span><span>Lembur</span></div>
+                            <p class="oc-note">Disetujui atasan lewat aplikasi</p>
+                        </div>
+                        <div class="ov ov-card ov-m4" data-name="pay">
+                            <div class="oc-head"><svg class="i"><use href="#i-lock"/></svg> E-Payslip</div>
+                            <div class="slip-pin"><small>Masukkan PIN</small><span><i></i><i></i><i></i><i></i></span></div>
+                        </div>
+                        <div class="ov ov-card ov-m5" data-name="rel">
+                            <div class="oc-head"><svg class="i"><use href="#i-phone"/></svg> Platform</div>
+                            <div class="mini-tags"><span>Android</span><span>iOS</span><span>Flutter</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ===== Chapter 04: SMB-TGR ===== -->
+        <article class="chapter" id="smbtgr" style="--c:#ffb43b;--c-rgb:255,180,59">
+            <div class="chapter-bg" aria-hidden="true"><div class="blob" data-speed="0.12"></div><span class="chapter-num" data-speed="0.18">04</span></div>
+            <div class="container chapter-grid">
+                <div class="chapter-copy">
+                    <div class="chapter-head reveal">
+                        <span class="tag">Website · CMS · Portal SSO</span>
+                        <h3>Website &amp; Portal SSO SMB-TGR</h3>
+                        <p class="lead">Wajah digital Toton Group: landing page responsif dengan CMS yang mudah dipakai tim non-teknis, plus portal SSO untuk akses ke aplikasi per divisi.</p>
+                        <ul class="chips"><li>Landing page</li><li>CMS</li><li>Portal SSO</li><li>File manager</li><li>Hosting</li></ul>
+                    </div>
+                    <div class="steps">
+                        <div class="step" data-layer="landing">
+                            <span class="step-n">1</span>
+                            <h4>Landing page responsif, PageSpeed 100</h4>
+                            <p>Website dioptimasi hingga skor <b>Google PageSpeed 100</b>, keamanan diperkuat, dan hosting ditangani sendiri.</p>
+                        </div>
+                        <div class="step" data-layer="cms">
+                            <span class="step-n">2</span>
+                            <h4>CMS untuk tim non-teknis</h4>
+                            <p>Kelola banner, unit usaha, berita &amp; publikasi, hingga <b>tema musiman dinamis</b> tanpa menyentuh kode.</p>
+                        </div>
+                        <div class="step" data-layer="portal">
+                            <span class="step-n">3</span>
+                            <h4>Portal SSO per divisi</h4>
+                            <p>Dashboard per divisi (HRD, FAT, Agronomy, Cost Control, dan lainnya) dan file manager bergaya Drive. Hak akses mengikuti role dari GAIA.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter-visual">
+                    <div class="visual-sticky" data-visual data-layer="landing">
+                        <div class="vs-glow" aria-hidden="true"></div>
+                        <figure class="browser ov ov-shot" data-name="landing">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url"><svg class="i"><use href="#i-lock"/></svg>smb-tgr.com</span></div>
+                            <img src="aset/web/smb-landing.webp" width="1279" height="631" alt="Landing page website Toton Group (SMB-TGR)" loading="lazy">
+                        </figure>
+                        <figure class="browser ov ov-shot" data-name="cms">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url"><svg class="i"><use href="#i-lock"/></svg>smb-tgr.com/cms</span></div>
+                            <img src="aset/web/smb-cms.webp" width="1279" height="631" alt="Admin CMS website SMB-TGR: konten website, unit usaha, berita, tema musiman, pustaka media" loading="lazy">
+                        </figure>
+                        <figure class="browser ov ov-shot" data-name="portal">
+                            <div class="browser-bar"><i></i><i></i><i></i><span class="url"><svg class="i"><use href="#i-lock"/></svg>smb-tgr.com/sso/dashboard</span></div>
+                            <img src="aset/web/smb-portal.webp" width="1279" height="629" alt="Dashboard Portal SSO SMB-TGR dengan akses per divisi" loading="lazy">
+                        </figure>
+                        <div class="ov ov-ps" data-name="landing">
+                            <svg viewBox="0 0 120 120" class="ps-ring"><circle cx="60" cy="60" r="52" class="bg"/><circle cx="60" cy="60" r="52" class="fg"/></svg>
+                            <b>100</b><span>PageSpeed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ===== Di balik layar ===== -->
+        <div class="container behind" id="dukungan">
+            <div class="sec-head reveal">
+                <span class="eyebrow"><i></i> Lintas divisi</span>
+                <h2>Bukan hanya menulis kode — <em>juga menjelaskan, melatih, dan mendukung.</em></h2>
+            </div>
+            <div class="behind-grid">
+                <article class="bcard spot reveal" style="--d:0s">
+                    <span class="sk-ico"><svg class="i"><use href="#i-present"/></svg></span>
+                    <h4>Riset &amp; presentasi</h4>
+                    <ul>
+                        <li>Mempresentasikan GAIA &amp; TechTon PAS kepada upper management</li>
+                        <li>Riset dan diskusi dengan Manager IT &amp; HRD (SSO, payroll)</li>
+                        <li>Menyusun proposal paket VPS</li>
+                    </ul>
+                </article>
+                <article class="bcard spot reveal" style="--d:.1s">
+                    <span class="sk-ico"><svg class="i"><use href="#i-users"/></svg></span>
+                    <h4>Pelatihan &amp; dokumentasi</h4>
+                    <ul>
+                        <li>Melatih pengguna: HRD dan tim Hunter</li>
+                        <li>Menyusun dokumentasi sistem</li>
+                        <li>Mendesain logo dan company profile</li>
+                    </ul>
+                </article>
+                <article class="bcard spot reveal" style="--d:.2s">
+                    <span class="sk-ico"><svg class="i"><use href="#i-printer"/></svg></span>
+                    <h4>Dukungan operasional IT</h4>
+                    <ul>
+                        <li>Printer &amp; scanner</li>
+                        <li>Jaringan dan backup perangkat</li>
+                        <li>Mesin absensi fingerprint</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= LAYANAN ================= -->
+    <section class="sec" id="layanan">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="eyebrow"><i></i> 04 — Yang bisa saya kerjakan</span>
+                <h2>Apa artinya semua ini <em>untuk perusahaan Anda?</em></h2>
+                <p>Setiap layanan di bawah ini sudah pernah saya bangun dan jalankan, bukan sekadar daftar teknologi.</p>
+            </div>
+
+            <div class="services">
+                <a class="svc spot reveal" href="#portal" style="--d:0s">
+                    <span class="svc-n">01</span>
+                    <h3>Sistem HRIS &amp; Payroll</h3>
+                    <p>Absensi, cuti &amp; lembur, approval berjenjang, payroll, kasbon, dan slip gaji digital. Pekerjaan HRD jadi otomatis dan terdokumentasi.</p>
+                    <span class="svc-proof">Bukti nyata: TechTon PAS Portal <svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                </a>
+                <a class="svc spot reveal" href="#gaia" style="--d:.08s">
+                    <span class="svc-n">02</span>
+                    <h3>SSO &amp; Manajemen Akses</h3>
+                    <p>Satu login untuk banyak aplikasi, hak akses per role, dan audit trail. Aman untuk perusahaan, praktis untuk karyawan.</p>
+                    <span class="svc-proof">Bukti nyata: GAIA Core <svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                </a>
+                <a class="svc spot reveal" href="#mobile" style="--d:.16s">
+                    <span class="svc-n">03</span>
+                    <h3>Aplikasi Mobile Android &amp; iOS</h3>
+                    <p>Aplikasi Flutter dengan login biometrik, REST API yang aman dan teruji, siap dirilis ke dua platform sekaligus.</p>
+                    <span class="svc-proof">Bukti nyata: TechTon PAS Mobile <svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                </a>
+                <a class="svc spot reveal" href="#smbtgr" style="--d:.24s">
+                    <span class="svc-n">04</span>
+                    <h3>Website Company Profile + CMS</h3>
+                    <p>Website cepat dan responsif dengan CMS agar tim Anda bisa update konten sendiri, lengkap dengan hosting dan pengamanan.</p>
+                    <span class="svc-proof">Bukti nyata: SMB-TGR, PageSpeed 100 <svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                </a>
+            </div>
+
+            <div class="cta-band reveal">
+                <div>
+                    <h3>Punya kebutuhan sistem internal?</h3>
+                    <p>Ceritakan masalahnya. Saya bantu rancang dari analisis sampai sistem live.</p>
+                </div>
+                <a class="btn btn-primary" href="https://wa.me/6289649185124?text=Halo%20Nurandra%2C%20saya%20melihat%20portofolio%20Anda%20dan%20ingin%20berdiskusi." target="_blank" rel="noopener">Diskusi via WhatsApp <svg class="i"><use href="#i-arrow-up-right"/></svg></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PENDIDIKAN ================= -->
+    <section class="sec" id="pendidikan">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="eyebrow"><i></i> 05 — Pendidikan &amp; sertifikasi</span>
+                <h2>Fondasi akademik yang <em>kuat.</em></h2>
+            </div>
+
+            <div class="edu">
+                <article class="edu-main spot reveal">
+                    <div class="edu-ring" data-ring>
+                        <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="bg"/><circle cx="60" cy="60" r="52" class="fg" style="--p:.9075"/></svg>
+                        <div><b><span data-count="3.63" data-decimals="2">3,63</span></b><small>dari 4,00</small></div>
+                    </div>
+                    <div class="edu-body">
+                        <span class="pill">Okt 2022 — Jan 2026</span>
+                        <h3>S1 Informatika</h3>
+                        <p class="edu-school">Universitas Islam Indonesia</p>
+                        <p>Fakultas Teknologi Industri · IPK 3,63 / 4,00</p>
+                    </div>
+                </article>
+                <article class="edu-cert spot reveal" style="--d:.1s">
+                    <span class="sk-ico"><svg class="i"><use href="#i-award"/></svg></span>
+                    <span class="pill">Okt 2025</span>
+                    <h3>CEPT — Skor 500</h3>
+                    <p>Certificate of English Proficiency Test, CILACS UII</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROYEK AKADEMIK ================= -->
+    <section class="sec sec-acad" id="akademik">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="eyebrow"><i></i> 06 — Proyek akademik</span>
+                <h2>Dari riset IoT sampai game — <em>belajar dengan membangun.</em></h2>
+            </div>
+
+            <!-- Smart Farming -->
+            <article class="feature reveal" id="smartfarm">
+                <div class="feature-copy">
+                    <span class="tag">Proyek individu · Mobile · IoT</span>
+                    <h3>Smart Farming App</h3>
+                    <p class="lead">Aplikasi mobile untuk memantau kondisi lahan pertanian secara real-time dari sensor IoT: suhu, kelembapan tanah, dan cahaya, lengkap dengan prediksi cuaca 5 hari. Dirancang dengan antarmuka yang ramah bagi petani tradisional.</p>
+                    <div class="sus">
+                        <div class="sus-n"><span data-count="86">86</span><small>/100</small></div>
+                        <div class="sus-t">
+                            <b>Skor usability (SUS)</b>
+                            <div class="sus-bar"><i style="--w:86%"></i></div>
+                            <span>Publikasi di jurnal ilmiah</span>
+                        </div>
+                    </div>
+                    <div class="feature-cta">
+                        <a class="btn btn-primary" href="https://github.com/nrandran/smartfarm1.git" target="_blank" rel="noopener">GitHub repo <svg class="i"><use href="#i-arrow-up-right"/></svg></a>
+                        <a class="btn btn-ghost" href="https://ijicom.respati.ac.id/index.php/ijicom/article/view/173" target="_blank" rel="noopener">Baca jurnal <svg class="i"><use href="#i-arrow-up-right"/></svg></a>
+                    </div>
+                </div>
+                <div class="feature-visual">
+                    <div class="sf-field" data-speed="0.06"><img src="aset/web/sf-field.webp" width="1000" height="1333" alt="Sensor IoT Smart Farming di sawah dengan aplikasi menampilkan suhu dan kelembapan" loading="lazy"></div>
+                    <div class="sf-phone sf-p1" data-speed="-0.1"><div class="phone phone-sm"><span class="phone-notch"></span><img src="aset/web/sf-home.webp" width="720" height="1446" alt="Beranda aplikasi Smart Farm dengan kondisi normal dan prediksi" loading="lazy"></div></div>
+                    <div class="sf-phone sf-p2" data-speed="-0.2"><div class="phone phone-sm"><span class="phone-notch"></span><img src="aset/web/sf-forecast.webp" width="720" height="1281" alt="Ramalan cuaca dan tanah 5 hari di aplikasi Smart Farm" loading="lazy"></div></div>
+                </div>
+            </article>
+
+            <!-- Posters -->
+            <div class="posters">
+                <a class="poster reveal" href="https://informatics-expo.id/en/karya/837" target="_blank" rel="noopener" style="--d:0s">
+                    <div class="poster-img tilt" data-tilt><img src="aset/web/prolift.webp" width="900" height="1273" alt="Poster proyek Prolift, aplikasi gym tracker" loading="lazy"></div>
+                    <div class="poster-body">
+                        <span class="tag">Tim 4 orang · Mobile App</span>
+                        <h4>Prolift</h4>
+                        <p>Aplikasi gym tracker dengan gamifikasi: tantangan, penghargaan, leaderboard, dan statistik interaktif untuk menjaga motivasi latihan.</p>
+                        <span class="more">Lihat di Informatics Expo <svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                    </div>
+                </a>
+                <a class="poster reveal" href="https://informatics-expo.id/en/karya/586" target="_blank" rel="noopener" style="--d:.1s">
+                    <div class="poster-img tilt" data-tilt><img src="aset/web/culturavista.webp" width="800" height="1133" alt="Poster proyek Culturavista, platform informasi cagar budaya" loading="lazy"></div>
+                    <div class="poster-body">
+                        <span class="tag">Tim 4 orang · Web App</span>
+                        <h4>Culturavista</h4>
+                        <p>Platform web informasi cagar budaya Indonesia, dari sejarah sampai fasilitas, untuk meningkatkan apresiasi budaya.</p>
+                        <span class="more">Lihat di Informatics Expo <svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                    </div>
+                </a>
+                <a class="poster reveal" href="https://informatics-expo.id/en/karya/844" target="_blank" rel="noopener" style="--d:.2s">
+                    <div class="poster-img tilt" data-tilt><img src="aset/web/balap-kalcer.webp" width="900" height="1256" alt="Poster proyek Balap Kalcer, game balap motor" loading="lazy"></div>
+                    <div class="poster-body">
+                        <span class="tag">Tim 3 orang · Game</span>
+                        <h4>Balap Kalcer</h4>
+                        <p>Game balap motor head-to-head di trek lurus dengan sistem upgrade performa kendaraan dan alur cerita yang imersif.</p>
+                        <span class="more">Lihat di Informatics Expo <svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= WIRAUSAHA ================= -->
+    <section class="sec" id="bisnis">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="eyebrow"><i></i> 07 — Wirausaha</span>
+                <h2>Saya paham <em>cara menjual</em> — bukan hanya cara membangun.</h2>
+            </div>
+
+            <article class="biz reveal">
+                <div class="biz-copy">
+                    <span class="tag">Owner · Thrift Online Business · Feb 2024 — Nov 2025</span>
+                    <h3>Prodaes</h3>
+                    <p class="lead">Bisnis thrift online yang saya kelola sendiri, dari memilih produk sampai konten promosi.</p>
+                    <div class="biz-stats">
+                        <div><b><span data-count="600" data-suffix="+">600+</span></b><span>produk terjual</span></div>
+                        <div><b><span data-count="4.7" data-decimals="1">4,7</span><small>/5</small></b><span>rating pembeli</span></div>
+                    </div>
+                    <ul class="biz-list">
+                        <li><svg class="i"><use href="#i-check"/></svg> Mengelola sourcing, distribusi, dan pemasaran digital</li>
+                        <li><svg class="i"><use href="#i-check"/></svg> Membuat konten promosi yang meningkatkan engagement</li>
+                    </ul>
+                    <img class="biz-rating" src="aset/web/prodaes-rating.webp" width="900" height="112" alt="Rating toko Prodaes 4,7 dengan 603 penilaian di marketplace" loading="lazy">
+                </div>
+                <div class="biz-visual">
+                    <div class="biz-vest" data-speed="0.08"><img src="aset/web/prodaes-vest.webp" width="638" height="645" alt="Produk vest Prodaes warna hitam dan krem" loading="lazy"></div>
+                    <div class="biz-phone bp1" data-speed="-0.06"><div class="phone phone-sm"><span class="phone-notch"></span><img src="aset/web/prodaes-shopee.webp" width="739" height="1402" alt="Halaman toko Prodaes di marketplace" loading="lazy"></div></div>
+                    <div class="biz-phone bp2" data-speed="-0.16"><div class="phone phone-sm"><span class="phone-notch"></span><img src="aset/web/prodaes-ig.webp" width="800" height="1265" alt="Profil Instagram Prodaes" loading="lazy"></div></div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ================= ORGANISASI & TALENT ================= -->
+    <section class="sec" id="organisasi">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="eyebrow"><i></i> 08 — Organisasi &amp; kreativitas</span>
+                <h2>Memimpin tim, mengelola acara, <em>dan tampil di depan kamera.</em></h2>
+            </div>
+
+            <div class="org">
+                <ul class="org-roles">
+                    <li class="reveal"><span class="sk-ico"><svg class="i"><use href="#i-users"/></svg></span><div><b>Ketua Unit KKN UII</b><span>Manajemen tim &amp; program kerja</span></div></li>
+                    <li class="reveal" style="--d:.08s"><span class="sk-ico"><svg class="i"><use href="#i-camera"/></svg></span><div><b>Staf Publikasi &amp; Dokumentasi</b><span>Lomba Jurusan &amp; Fakultas</span></div></li>
+                    <li class="reveal" style="--d:.16s"><span class="sk-ico"><svg class="i"><use href="#i-flow"/></svg></span><div><b>Organizing Committee</b><span>Pesona Ta'aruf UII 2024</span></div></li>
+                    <li class="reveal" style="--d:.24s"><span class="sk-ico"><svg class="i"><use href="#i-mega"/></svg></span><div><b>Talent konten TikTok kampus</b><span>Promosi digital kampus</span></div></li>
+                </ul>
+
+                <div class="org-photos">
+                    <figure class="op op1 reveal" data-speed="0.05"><img src="aset/web/org-kkn.webp" width="800" height="990" alt="Nurandra sebagai Ketua Unit KKN UII" loading="lazy"><figcaption>Ketua Unit KKN</figcaption></figure>
+                    <figure class="op op2 reveal" style="--d:.1s" data-speed="-0.08"><img src="aset/web/org-pdd.webp" width="800" height="790" alt="Nurandra sebagai staf Publikasi dan Dokumentasi (PDD)" loading="lazy"><figcaption>Staf Publikasi · Lomba Jurusan</figcaption></figure>
+                    <figure class="op op3 reveal" style="--d:.2s" data-speed="0.03"><img src="aset/web/org-staf-ahli.webp" width="800" height="788" alt="Nurandra sebagai staf ahli Publikasi dan Dokumentasi" loading="lazy"><figcaption>Staf Publikasi · Lomba Fakultas</figcaption></figure>
+                </div>
+            </div>
+
+            <div class="talent-head reveal">
+                <h3>Konten yang ditonton <em>ribuan orang.</em></h3>
+                <p>Tampil sebagai talent konten TikTok kampus dan teaser Pesona Ta'aruf UII 2024.</p>
+            </div>
+            <div class="talent">
+                <figure class="tl tl-wide reveal">
+                    <img src="aset/web/talent-3.webp" width="1000" height="627" alt="Konten TikTok kampus: Jangan Tolak Cintaku dan Bus I'm UII" loading="lazy">
+                    <figcaption><b>74,2K</b> views <span>· "Bus I'm UII"</span></figcaption>
+                </figure>
+                <figure class="tl tl-tall reveal" style="--d:.08s" data-speed="-0.05">
+                    <img src="aset/web/talent-1.webp" width="250" height="332" alt="Konten TikTok Pesona Anak Teknik UII" loading="lazy">
+                    <figcaption><b>13,8K</b> views</figcaption>
+                </figure>
+                <figure class="tl tl-tall reveal" style="--d:.16s" data-speed="0.04">
+                    <img src="aset/web/talent-4.webp" width="250" height="333" alt="Konten TikTok Salat saat banyak pikiran" loading="lazy">
+                    <figcaption><b>6K</b> views</figcaption>
+                </figure>
+                <figure class="tl tl-teaser reveal" style="--d:.1s">
+                    <img src="aset/web/talent-2.webp" width="1000" height="495" alt="Teaser Pesona Ta'aruf UII 2024 di Instagram" loading="lazy">
+                    <figcaption><b>1,9K</b> likes <span>· Teaser Pesona Ta'aruf UII 2024</span></figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KOMPETENSI ================= -->
+    <section class="comp" aria-label="Kompetensi pendukung">
+        <div class="comp-row" data-dir="1"><div class="comp-track"><span>Komunikasi &amp; presentasi</span><i>✦</i><span>Problem solving sistematis</span><i>✦</i><span>Kolaborasi lintas divisi</span><i>✦</i><span>Belajar cepat</span><i>✦</i><span>Content creation &amp; digital marketing</span><i>✦</i>
+            <span>Komunikasi &amp; presentasi</span><i>✦</i><span>Problem solving sistematis</span><i>✦</i><span>Kolaborasi lintas divisi</span><i>✦</i><span>Belajar cepat</span><i>✦</i><span>Content creation &amp; digital marketing</span><i>✦</i></div></div>
+    </section>
+
+    <!-- ================= KONTAK ================= -->
+    <section class="contact" id="kontak">
+        <div class="contact-bg" aria-hidden="true"><div class="glow glow-c" data-speed="0.1"></div></div>
+        <div class="container contact-grid">
+            <div class="contact-copy">
+                <span class="eyebrow reveal"><i></i> 09 — Mari berkolaborasi</span>
+                <h2 class="reveal">Mari bangun sistem <em>berikutnya</em> bersama.</h2>
+                <p class="lead reveal">Terbuka untuk posisi Full-Stack / Web / Mobile Developer, proyek freelance, dan kolaborasi pengembangan sistem IT. Balasan biasanya cepat lewat WhatsApp.</p>
+
+                <div class="contact-links reveal">
+                    <a class="cl cl-main" href="https://wa.me/6289649185124?text=Halo%20Nurandra%2C%20saya%20melihat%20portofolio%20Anda." target="_blank" rel="noopener">
+                        <img src="aset/logo wa.png" width="28" height="28" alt="" loading="lazy">
+                        <div><small>WhatsApp</small><b>0896 4918 5124</b></div>
+                        <svg class="i"><use href="#i-arrow-up-right"/></svg>
+                    </a>
+                    <a class="cl" href="mailto:nurandra770@gmail.com">
+                        <img src="aset/logo gmail.png" width="28" height="28" alt="" loading="lazy">
+                        <div><small>Email</small><b>nurandra770@gmail.com</b></div>
+                        <svg class="i"><use href="#i-arrow-up-right"/></svg>
+                    </a>
+                    <a class="cl" href="https://www.instagram.com/nrandran/" target="_blank" rel="noopener">
+                        <img src="aset/logo ig.png" width="28" height="28" alt="" loading="lazy">
+                        <div><small>Instagram</small><b>@nrandran</b></div>
+                        <svg class="i"><use href="#i-arrow-up-right"/></svg>
+                    </a>
+                    <a class="cl" href="CV-Nurandra-Satya-Adhi.pdf" download>
+                        <span class="cl-ico"><svg class="i"><use href="#i-download"/></svg></span>
+                        <div><small>Curriculum Vitae</small><b>Unduh CV (PDF)</b></div>
+                        <svg class="i"><use href="#i-arrow-up-right"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-visual reveal">
+                <div class="contact-portrait" data-speed="0.05">
+                    <img src="aset/web/about.webp" width="1000" height="1232" alt="Nurandra Satya Adhi" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-in">
+        <span>© 2026 Nurandra Satya Adhi · Yogyakarta, Indonesia</span>
+        <a href="#top">Kembali ke atas <svg class="i"><use href="#i-arrow-up-right"/></svg></a>
+    </div>
+</footer>
+
+<a class="wa-float" id="waFloat" href="https://wa.me/6289649185124?text=Halo%20Nurandra%2C%20saya%20melihat%20portofolio%20Anda." target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+    <img src="aset/logo wa.png" width="28" height="28" alt="">
+    <span>Chat saya</span>
+</a>
+
+<script src="script.js" defer></script>
+</body>
+</html>
+    
