@@ -1,6 +1,7 @@
 /* ==========================================================================
-   Portofolio — Nurandra Satya Adhi
-   Vanilla JS, tanpa dependensi. Semua efek menghormati prefers-reduced-motion.
+   Portfolio — Nurandra Satya Adhi
+   Vanilla JS, no dependencies. Every effect respects prefers-reduced-motion
+   and every module is guarded, so the same file serves all pages.
    ========================================================================== */
 (() => {
     'use strict';
@@ -9,77 +10,122 @@
     const $ = (s, c = document) => c.querySelector(s);
     const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
     const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
-    const fmt = (n, d = 0) => n.toLocaleString('id-ID', { minimumFractionDigits: d, maximumFractionDigits: d });
+    const fmt = (n, d = 0) => n.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
 
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const hasIO = 'IntersectionObserver' in window;
 
-    /* ---------- 1. Hero: animasi masuk setelah gambar siap ---------- */
-    const hero = $('#hero');
-    const heroImg = $('.hero-portrait img');
-    const showHero = () => requestAnimationFrame(() => hero.classList.add('ready'));
-    if (heroImg && !heroImg.complete) {
-        Promise.race([
-            heroImg.decode().catch(() => {}),
-            new Promise(r => setTimeout(r, 1200))
-        ]).then(showHero);
-    } else {
-        showHero();
+    /* ---------- 1. Hero entrance (waits for the portrait so nothing pops in) ---------- */
+    const hero = $('#home');
+    if (hero) {
+        const img = $('.hero__portrait img', hero);
+        const ready = () => requestAnimationFrame(() => hero.classList.add('ready'));
+        if (img && !img.complete) {
+            Promise.race([img.decode().catch(() => {}), new Promise(r => setTimeout(r, 1400))]).then(ready);
+        } else {
+            ready();
+        }
     }
 
-    /* ---------- 2. Navbar, progress bar, tombol WhatsApp ---------- */
+    /* ---------- 2. Page transition curtain ---------- */
+    const curtain = $('.curtain');
+    function leave(href) {
+        if (!curtain) { location.href = href; return; }
+        curtain.style.animation = 'none';
+        curtain.style.transition = 'none';
+        curtain.style.transform = 'translateY(101%)';
+        curtain.getBoundingClientRect();
+        curtain.style.transition = 'transform .55s cubic-bezier(.22,.8,.2,1)';
+        curtain.style.transform = 'translateY(0)';
+        setTimeout(() => { location.href = href; }, 580);
+    }
+    document.addEventListener('click', e => {
+        const a = e.target.closest('a[href]');
+        if (!a || e.defaultPrevented || reduce || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        if (a.target || a.hasAttribute('download')) return;
+        const url = new URL(a.href, location.href);
+        if (url.origin !== location.origin || url.pathname === location.pathname) return;
+        e.preventDefault();
+        leave(url.href);
+    });
+    // coming back via the browser's back button (bfcache): lift the curtain again
+    addEventListener('pageshow', e => {
+        if (e.persisted && curtain) {
+            curtain.style.transition = 'transform .5s cubic-bezier(.22,.8,.2,1)';
+            curtain.style.transform = 'translateY(-101%)';
+        }
+    });
+
+    /* ---------- 3. Navbar, progress bar, WhatsApp button ---------- */
     const nav = $('#nav');
     const progress = $('#progress');
     const waFloat = $('#waFloat');
 
     function updateChrome() {
         const y = window.scrollY;
-        const max = doc.scrollHeight - innerHeight;
-        progress.style.setProperty('--p', max > 0 ? (y / max).toFixed(4) : 0);
-        nav.classList.toggle('scrolled', y > 20);
-        waFloat.classList.toggle('show', y > innerHeight * 0.8);
+        if (progress) {
+            const max = doc.scrollHeight - innerHeight;
+            progress.style.setProperty('--p', max > 0 ? (y / max).toFixed(4) : 0);
+        }
+        if (nav) nav.classList.toggle('scrolled', y > 20);
+        if (waFloat) waFloat.classList.toggle('show', y > innerHeight * 0.8);
     }
 
+    /* mobile menu */
     const burger = $('#burger');
     const menu = $('#mobileMenu');
     function setMenu(open) {
+        if (!burger || !menu) return;
         doc.classList.toggle('menu-open', open);
         burger.setAttribute('aria-expanded', String(open));
-        burger.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+        burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
         menu.setAttribute('aria-hidden', String(!open));
     }
-    burger.addEventListener('click', () => setMenu(!doc.classList.contains('menu-open')));
-    menu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
-    addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
-    matchMedia('(min-width: 1101px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+    if (burger && menu) {
+        burger.addEventListener('click', () => setMenu(!doc.classList.contains('menu-open')));
+        menu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+        addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+        matchMedia('(min-width: 1181px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+    }
 
-    // link aktif sesuai section yang sedang dibaca
-    const navLinks = $$('.nav-links a');
-    const linkById = new Map(navLinks.map(a => [a.getAttribute('href').slice(1), a]));
-    const navObserver = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (!e.isIntersecting) return;
-            navLinks.forEach(l => l.classList.remove('active'));
-            const link = linkById.get(e.target.id);
-            if (link) link.classList.add('active');
-        });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    linkById.forEach((_, id) => { const el = document.getElementById(id); if (el) navObserver.observe(el); });
-    new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) navLinks.forEach(l => l.classList.remove('active')); }), { threshold: 0.5 }).observe(hero);
+    /* active link + sliding indicator */
+    const navLinks = $$('#navLinks a');
+    const bar = $('.nav__bar');
+    let activeLink = null;
+    function moveBar() {
+        if (!bar) return;
+        if (!activeLink || !activeLink.offsetWidth) { bar.classList.remove('on'); return; }
+        bar.style.setProperty('--x', activeLink.offsetLeft + 'px');
+        bar.style.setProperty('--w', activeLink.offsetWidth + 'px');
+        bar.classList.add('on');
+    }
+    if (navLinks.length && hasIO) {
+        const byId = new Map(navLinks.map(a => [a.hash.slice(1), a]));
+        const navIO = new IntersectionObserver(entries => {
+            entries.forEach(en => {
+                if (!en.isIntersecting) return;
+                activeLink = byId.get(en.target.id) || null;
+                navLinks.forEach(l => l.classList.toggle('active', l === activeLink));
+                moveBar();
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        byId.forEach((_, id) => { const el = document.getElementById(id); if (el) navIO.observe(el); });
+    }
 
-    /* ---------- 3. Mesin parallax (dengan inersia / lerp) ---------- */
-    // data-speed : faktor geser vertikal. Positif = bergerak lebih lambat dari scroll, negatif = lebih cepat.
-    // data-x     : faktor geser horizontal.
-    // data-mode="scroll" : dihitung dari posisi scroll absolut (dipakai di hero).
-    // Memakai properti CSS `translate`, jadi tidak bentrok dengan `transform` milik animasi lain.
+    /* ---------- 4. Parallax engine (inertia / lerp, uses the CSS `translate` property) ---------- */
+    // data-speed : vertical factor. Positive = slower than the page, negative = faster.
+    // data-mode="scroll" : computed from absolute scroll (hero), otherwise from distance to viewport centre.
     const items = [];
     let current = window.scrollY;
     let frame = 0;
+    const parallaxOn = () => !reduce && innerWidth > 760;
 
     function measure() {
         items.length = 0;
-        const els = $$('[data-speed],[data-x]');
+        const els = $$('[data-speed]');
         els.forEach(el => { el.style.translate = ''; });
+        if (!parallaxOn()) return;
         const sy = window.scrollY;
         els.forEach(el => {
             const r = el.getBoundingClientRect();
@@ -88,7 +134,6 @@
                 cy: r.top + sy + r.height / 2,
                 h: r.height,
                 sp: parseFloat(el.dataset.speed) || 0,
-                x: parseFloat(el.dataset.x) || 0,
                 scroll: el.dataset.mode === 'scroll',
                 last: ''
             });
@@ -98,18 +143,16 @@
     function apply(sy) {
         const vh = innerHeight;
         for (const it of items) {
-            let x, y;
+            let y;
             if (it.scroll) {
-                if (sy > vh * 2) continue;
-                x = sy * it.x;
+                if (sy > vh * 1.5) continue;
                 y = sy * it.sp;
             } else {
                 const d = it.cy - (sy + vh / 2);
                 if (Math.abs(d) > vh * 1.2 + it.h) continue;
-                x = d * it.x;
                 y = d * it.sp;
             }
-            const v = x.toFixed(1) + 'px ' + y.toFixed(1) + 'px';
+            const v = '0px ' + y.toFixed(1) + 'px';
             if (v !== it.last) { it.el.style.translate = v; it.last = v; }
         }
     }
@@ -122,56 +165,20 @@
         frame = current !== target ? requestAnimationFrame(tick) : 0;
     }
 
-    /* ---------- 4. Teks "scrub": kata menyala mengikuti scroll ---------- */
-    const scrubEl = $('#scrub');
-    const words = [];
-    if (scrubEl) {
-        const walker = document.createTreeWalker(scrubEl, NodeFilter.SHOW_TEXT);
-        const textNodes = [];
-        while (walker.nextNode()) textNodes.push(walker.currentNode);
-        textNodes.forEach(node => {
-            const frag = document.createDocumentFragment();
-            node.textContent.split(/(\s+)/).forEach(tok => {
-                if (!tok) return;
-                if (/^\s+$/.test(tok)) { frag.appendChild(document.createTextNode(tok)); return; }
-                const s = document.createElement('span');
-                s.className = 'w';
-                s.textContent = tok;
-                frag.appendChild(s);
-                words.push(s);
-            });
-            node.parentNode.replaceChild(frag, node);
-        });
-    }
-    let lastLit = -1;
-    function updateScrub() {
-        if (!scrubEl) return;
-        let lit;
-        if (reduce) {
-            lit = words.length;
-        } else {
-            const r = scrubEl.getBoundingClientRect();
-            const vh = innerHeight;
-            lit = Math.round(clamp((vh * 0.82 - r.top) / (r.height + vh * 0.25), 0, 1) * words.length);
-        }
-        if (lit === lastLit) return;
-        lastLit = lit;
-        for (let i = 0; i < words.length; i++) words[i].classList.toggle('lit', i < lit);
-    }
-
-    /* ---------- 5. Satu handler scroll untuk semuanya ---------- */
     function onScroll() {
         updateChrome();
-        updateScrub();
-        if (!reduce && !frame) frame = requestAnimationFrame(tick);
+        checkClip();
+        if (items.length && !frame) frame = requestAnimationFrame(tick);
     }
     addEventListener('scroll', onScroll, { passive: true });
 
     let resizeTimer = 0;
     function refresh() {
-        if (!reduce) { measure(); current = window.scrollY; apply(current); }
+        measure();
+        current = window.scrollY;
+        apply(current);
         updateChrome();
-        updateScrub();
+        moveBar();
     }
     addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(refresh, 150); });
     addEventListener('load', refresh);
@@ -185,10 +192,27 @@
     }
     refresh();
 
-    /* ---------- 6. Reveal saat masuk viewport ---------- */
-    const revealEls = $$('.reveal');
-    if (reduce || !('IntersectionObserver' in window)) {
+    /* ---------- 5. Reveal on scroll ---------- */
+    $$('.stack__row').forEach(row => $$('.tile', row).forEach((t, i) => t.style.setProperty('--ti', i)));
+    const revealEls = $$('.rv');
+    // Elements revealed with clip-path are fully clipped before they appear, and a fully
+    // clipped element never counts as "intersecting", so they are checked by position instead.
+    let pendingClip = revealEls.filter(el => el.classList.contains('rv--clip'));
+    const plainReveal = revealEls.filter(el => !el.classList.contains('rv--clip'));
+
+    function checkClip() {
+        if (!pendingClip.length) return;
+        const limit = innerHeight * 0.9;
+        pendingClip = pendingClip.filter(el => {
+            const r = el.getBoundingClientRect();
+            if (r.top < limit && r.bottom > 0) { el.classList.add('in'); return false; }
+            return true;
+        });
+    }
+
+    if (reduce || !hasIO) {
         revealEls.forEach(el => el.classList.add('in'));
+        pendingClip = [];
     } else {
         const io = new IntersectionObserver(entries => {
             entries.forEach(e => {
@@ -197,26 +221,28 @@
                 io.unobserve(e.target);
             });
         }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-        revealEls.forEach(el => io.observe(el));
+        plainReveal.forEach(el => io.observe(el));
     }
+    checkClip();
+    addEventListener('load', checkClip);
+    addEventListener('resize', checkClip);
 
-    /* ---------- 7. Count-up angka ---------- */
+    /* ---------- 6. Count-up numbers ---------- */
     function countUp(el) {
         const to = parseFloat(el.dataset.count);
         const d = parseInt(el.dataset.decimals || '0', 10);
         const suffix = el.dataset.suffix || '';
         if (reduce) { el.textContent = fmt(to, d) + suffix; return; }
-        const dur = 1700;
+        const dur = 1600;
         const t0 = performance.now();
         (function step(t) {
             const p = clamp((t - t0) / dur, 0, 1);
-            const eased = 1 - Math.pow(1 - p, 3);
-            el.textContent = fmt(to * eased, d) + suffix;
+            el.textContent = fmt(to * (1 - Math.pow(1 - p, 3)), d) + suffix;
             if (p < 1) requestAnimationFrame(step);
         })(t0);
     }
     const counters = $$('[data-count]');
-    if (!reduce && 'IntersectionObserver' in window) {
+    if (!reduce && hasIO) {
         counters.forEach(el => { el.textContent = fmt(0, parseInt(el.dataset.decimals || '0', 10)) + (el.dataset.suffix || ''); });
         const cio = new IntersectionObserver(entries => {
             entries.forEach(e => {
@@ -227,69 +253,53 @@
         }, { threshold: 0.6 });
         counters.forEach(el => cio.observe(el));
     } else {
-        counters.forEach(el => countUp(el));
+        counters.forEach(countUp);
     }
 
-    /* ---------- 8. Chapter: visual sticky berganti sesuai langkah ---------- */
-    $$('.chapter').forEach(chapter => {
-        const visual = $('[data-visual]', chapter);
-        const steps = $$('.step', chapter);
-        const overlays = $$('.ov', chapter);
-        if (!visual || !steps.length) return;
+    /* ---------- 7. Project dialogs ---------- */
+    const dialogs = $$('dialog.dlg');
+    if (dialogs.length && typeof HTMLDialogElement === 'function') {
+        let trigger = null;
 
-        let started = false;
-        const setStep = step => {
-            started = true;
-            const layers = (step.dataset.layer || '').split(' ');
-            steps.forEach(s => s.classList.toggle('active', s === step));
-            visual.dataset.layer = layers.join(' ');
-            overlays.forEach(o => o.classList.toggle('on', layers.includes(o.dataset.name)));
-        };
+        function openDialog(id, from) {
+            const d = document.getElementById(id);
+            if (!d || d.open) return;
+            trigger = from;
+            d.showModal();
+            doc.classList.add('dlg-open');
+            d.scrollTop = 0;
+        }
 
-        if (!('IntersectionObserver' in window)) { setStep(steps[0]); return; }
-
-        // langkah pertama menyala saat chapter mulai terlihat (supaya animasi ring dsb. tidak terbuang di luar layar)
-        const start = new IntersectionObserver(es => {
-            if (es.some(e => e.isIntersecting) && !started) setStep(steps[0]);
-            if (started) start.disconnect();
-        }, { threshold: 0.15 });
-        start.observe(chapter);
-
-        const stepObserver = new IntersectionObserver(es => {
-            es.forEach(e => { if (e.isIntersecting) setStep(e.target); });
-        }, { rootMargin: '-42% 0px -48% 0px' });
-        steps.forEach(s => stepObserver.observe(s));
-    });
-
-    /* ---------- 9. Interaksi pointer: spotlight, tilt, hero depth ---------- */
-    $$('.spot').forEach(el => {
-        el.addEventListener('pointermove', e => {
-            const r = el.getBoundingClientRect();
-            el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-            el.style.setProperty('--my', (e.clientY - r.top) + 'px');
-        });
-    });
-
-    if (finePointer && !reduce) {
-        $$('[data-tilt]').forEach(el => {
-            el.addEventListener('pointermove', e => {
-                const r = el.getBoundingClientRect();
-                const px = (e.clientX - r.left) / r.width - 0.5;
-                const py = (e.clientY - r.top) / r.height - 0.5;
-                el.style.setProperty('--ry', (px * 10).toFixed(2) + 'deg');
-                el.style.setProperty('--rx', (-py * 10).toFixed(2) + 'deg');
-            });
-            el.addEventListener('pointerleave', () => {
-                el.style.setProperty('--rx', '0deg');
-                el.style.setProperty('--ry', '0deg');
+        $$('[data-open]').forEach(t => {
+            t.addEventListener('click', e => {
+                if (e.target.closest('a')) return;
+                openDialog(t.dataset.open, t);
             });
         });
 
+        dialogs.forEach(d => {
+            let downOnBackdrop = false;
+            d.addEventListener('pointerdown', e => { downOnBackdrop = e.target === d; });
+            d.addEventListener('click', e => {
+                if (e.target.closest('[data-close]') || (e.target === d && downOnBackdrop)) d.close();
+            });
+            d.addEventListener('close', () => {
+                doc.classList.remove('dlg-open');
+                // return focus to a real button, not the decorative stage that was clicked
+                const btn = trigger && (trigger.matches('button') ? trigger : trigger.closest('article, .site')?.querySelector('button[data-open]'));
+                if (btn) btn.focus({ preventScroll: true });
+                trigger = null;
+            });
+        });
+    }
+
+    /* ---------- 8. Pointer depth in the hero (fine pointers only) ---------- */
+    if (hero && finePointer && !reduce) {
         hero.addEventListener('pointermove', e => {
             const r = hero.getBoundingClientRect();
             hero.style.setProperty('--hx', (((e.clientX - r.left) / r.width) - 0.5).toFixed(3));
             hero.style.setProperty('--hy', (((e.clientY - r.top) / r.height) - 0.5).toFixed(3));
-        });
+        }, { passive: true });
         hero.addEventListener('pointerleave', () => {
             hero.style.setProperty('--hx', 0);
             hero.style.setProperty('--hy', 0);

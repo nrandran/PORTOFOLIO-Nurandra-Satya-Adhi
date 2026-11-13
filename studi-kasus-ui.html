@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>UI/UX Case Study — GAIA &amp; TechTon PAS | Nurandra Satya Adhi</title>
+    <meta name="description" content="UI/UX case study: designing HRIS interfaces for HR admins (web) and employees (mobile) at Toton Group. From requirements discussions and Figma to implementation.">
+    <meta name="author" content="Nurandra Satya Adhi">
+    <meta name="theme-color" content="#060A16">
+    <link rel="canonical" href="https://portofolio-nurandra-satya-adhi.vercel.app/studi-kasus-ui.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="UI/UX Case Study — GAIA &amp; TechTon PAS">
+    <meta property="og:description" content="One HRIS, two kinds of users: HR admins on the web and employees on their phones.">
+    <meta property="og:url" content="https://portofolio-nurandra-satya-adhi.vercel.app/studi-kasus-ui.html">
+    <meta property="og:image" content="https://portofolio-nurandra-satya-adhi.vercel.app/aset/web/og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="aset/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="aset/apple-touch-icon.png">
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body class="cs">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="curtain" aria-hidden="true"><span class="curtain__mark">NSA</span></div>
+
+<div class="cs-wrap">
+    <header class="cs-top">
+        <a class="cs-back" href="index.html#projects"><svg class="i"><use href="#i-arrow"/></svg>Back to portfolio</a>
+        <a class="brand" href="index.html" aria-label="Nurandra Satya Adhi, home">
+            <span class="brand__mark" aria-hidden="true"><b>N</b></span>
+            <span class="brand__name">Nurandra<br>Satya Adhi</span>
+        </a>
+    </header>
+
+    <main id="main">
+        <div class="cs-hero">
+            <p class="eyebrow"><b>UX</b>UI/UX case study</p>
+            <h1>One HRIS, two kinds of users: <em>HR admins on the web</em> and employees on their phones</h1>
+            <p class="lead">At Toton Group I designed the interfaces of GAIA Core (employee data, SSO, access management) and TechTon PAS (attendance, leave, overtime, payslips), then built them myself. This page walks through the design decisions.</p>
+            <p class="cs-en"><b>Dalam Bahasa Indonesia:</b> Di Toton Group saya merancang antarmuka HRIS internal (GAIA Core dan TechTon PAS) di Figma, lalu membangunnya sendiri. Halaman ini menjelaskan keputusan desain untuk aplikasi web admin HRD dan aplikasi mobile karyawan.</p>
+
+            <dl class="cs-meta">
+                <div><dt>Role</dt><dd>UI/UX design + development</dd></div>
+                <div><dt>Company</dt><dd>Toton Group</dd></div>
+                <div><dt>Period</dt><dd>May 2026 — present</dd></div>
+                <div><dt>Tools</dt><dd>Figma, PHP MVC, Flutter</dd></div>
+            </dl>
+        </div>
+
+        <section class="cs-sec rv" id="problem">
+            <h2>The problem</h2>
+            <p>HR and management needs cover several things at once: employee data, access to many applications, attendance, leave and overtime with tiered approval, and payslips. The people using the system work in very different ways.</p>
+            <p><b>Admins and HR</b> work on wide screens with lots of tables and settings. <b>Employees</b> open the system from their phone, briefly, for one purpose: clock in, request leave, or view a payslip.</p>
+            <p>The design challenge: keep a secure, feature-rich system feeling simple for both groups, and consistent across every application.</p>
+        </section>
+
+        <section class="cs-sec rv" id="process">
+            <h2>Process</h2>
+            <ol class="cs-steps">
+                <li><b>Requirements discussions.</b> Research and conversations with the IT and HR managers about SSO, payroll and approval flows.</li>
+                <li><b>Design in Figma.</b> Flows and screens were laid out before any code was written.</li>
+                <li><b>Implementation.</b> Web with PHP MVC, mobile with Flutter, and every application signing in through a single account (SSO).</li>
+                <li><b>Testing and documentation.</b> Thorough black box testing and system documentation.</li>
+                <li><b>Presentation and training.</b> A presentation to upper management and training for HR users.</li>
+            </ol>
+        </section>
+
+        <section class="cs-sec" id="decisions">
+            <h2 class="rv">Design decisions</h2>
+
+            <div class="cs-decision rv">
+                <div>
+                    <p class="tag">GAIA Core · Web admin</p>
+                    <h3>Access management that makes sense without technical training</h3>
+                    <p>Permission settings are usually complicated. At the top of the page I placed three short steps: <b>create a role</b>, <b>set menu access</b>, <b>add members</b>. The rules are written in everyday language, for example "no tick means the menu does not appear".</p>
+                    <p>The role table shows the allowed applications as labels, plus the number of menus and users, so an admin can review a role without opening its details.</p>
+                </div>
+                <figure>
+                    <div class="cs-shot"><img src="aset/web/gaia-akses.webp" width="1279" height="632" alt="GAIA access management page: three steps on top, role table with application labels, menu counts, user counts and status" loading="lazy"></div>
+                    <figcaption>Access management in GAIA Core</figcaption>
+                </figure>
+            </div>
+
+            <div class="cs-decision cs-decision--flip rv">
+                <div>
+                    <p class="tag">TechTon PAS · Employee web</p>
+                    <h3>A dashboard that answers "what do I need to do today?"</h3>
+                    <p>The top shows only a brief identity. Below it is <b>Self Service</b>: large icon cards for Attendance, Leave &amp; Permission and Overtime, each in its own colour for quick recognition. The sidebar groups the menu into "Main Menu" and "Employee Portal".</p>
+                    <p>The logo, sidebar, header and card style match GAIA, so people moving between applications through SSO never feel they have entered a different product.</p>
+                </div>
+                <figure>
+                    <div class="cs-shot"><img src="aset/web/techton-portal.webp" width="1279" height="629" alt="TechTon PAS Portal dashboard: employee profile, info cards and Self Service cards for attendance, leave and overtime" loading="lazy"></div>
+                    <figcaption>Employee dashboard in TechTon PAS Portal</figcaption>
+                </figure>
+            </div>
+
+            <div class="cs-decision cs-decision--mobile rv">
+                <figure class="cs-phone">
+                    <div class="cs-shot"><img src="aset/web/techton-mobile.webp" width="720" height="1456" alt="TechTon PAS Mobile home screen: today's attendance card, announcements, icon menu grid and bottom navigation" loading="lazy"></div>
+                    <figcaption>TechTon PAS Mobile home (Flutter)</figcaption>
+                </figure>
+                <div>
+                    <p class="tag">TechTon PAS · Mobile</p>
+                    <h3>Main action on top, everything else one tap away</h3>
+                    <p>The blue <b>Today's Attendance</b> card shows clock-in and clock-out times at the very top, because that is what people check most. Company announcements are a card carousel, followed by a three-column grid of coloured icons with <b>numeric badges</b> for requests waiting for action.</p>
+                    <p>The bottom navigation has only three tabs (Home, Attendance, Profile) so it stays within reach of one hand.</p>
+                    <div class="cs-pills"><span>SSO login</span><span>Biometrics</span><span>Payslip PIN</span><span>PDF payslip</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cs-sec rv" id="security">
+            <h2>Security as part of the experience</h2>
+            <p>Because the data is sensitive, I treated several security choices as UX decisions: <b>biometric authentication</b> in the mobile app, a <b>PIN</b> to open payslips, PDF payslips with a <b>watermark</b>, and access per menu managed from one place so people only see what is relevant to them.</p>
+        </section>
+
+        <section class="cs-sec rv" id="results">
+            <h2>Results and what I learned</h2>
+            <p>The system runs at Toton Group and I have presented it to upper management. For the SMB-TGR website I optimized the landing page to a <b>Google PageSpeed score of 100</b>.</p>
+            <p>Because I design and build, every design decision is tested against implementation reality. What I want to go deeper on next is more structured <b>usability testing</b> with end users, and a documented <b>design system</b>.</p>
+        </section>
+
+        <div class="cs-cta rv">
+            <h2>Want to talk product design?</h2>
+            <p>I am open to UI/UX or product design roles that sit close to development.</p>
+            <div class="proj__cta">
+                <a class="btn btn--primary" href="mailto:nurandra770@gmail.com"><span>Send an email</span><svg class="i"><use href="#i-arrow"/></svg></a>
+                <a class="btn btn--ghost" href="index.html#projects"><span>See other projects</span><svg class="i"><use href="#i-arrow"/></svg></a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="cs-foot">Nurandra Satya Adhi · Yogyakarta · nurandra770@gmail.com</footer>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
