@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Nurandra Satya Adhi — Full-Stack Developer | HRIS, SSO &amp; Mobile</title>
+    <meta name="description" content="Portfolio of Nurandra Satya Adhi, Full-Stack Developer and Informatics graduate of Universitas Islam Indonesia. Building enterprise HRIS, SSO, payroll systems and Flutter mobile apps at Toton Group.">
+    <meta name="author" content="Nurandra Satya Adhi">
+    <meta name="theme-color" content="#060A16">
+    <link rel="canonical" href="https://portofolio-nurandra-satya-adhi.vercel.app/">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Nurandra Satya Adhi">
+    <meta property="og:title" content="Nurandra Satya Adhi — Full-Stack Developer">
+    <meta property="og:description" content="Building digital experiences through code &amp; innovation. Enterprise HRIS, SSO, payroll and Flutter mobile apps.">
+    <meta property="og:url" content="https://portofolio-nurandra-satya-adhi.vercel.app/">
+    <meta property="og:image" content="https://portofolio-nurandra-satya-adhi.vercel.app/aset/web/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Nurandra Satya Adhi — Full-Stack Developer">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="aset/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="aset/apple-touch-icon.png">
+
+    <!-- Enable JS-only states as early as possible so reveal animations never flash -->
+    <script>document.documentElement.classList.add('js');</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="aset/web/hero.webp" fetchpriority="high">
+    <link rel="stylesheet" href="Style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nurandra Satya Adhi",
+      "jobTitle": "Full-Stack Developer",
+      "email": "mailto:nurandra770@gmail.com",
+      "telephone": "+6289649185124",
+      "url": "https://portofolio-nurandra-satya-adhi.vercel.app/",
+      "image": "https://portofolio-nurandra-satya-adhi.vercel.app/aset/web/og.jpg",
+      "address": { "@type": "PostalAddress", "addressLocality": "Yogyakarta", "addressCountry": "ID" },
+      "worksFor": { "@type": "Organization", "name": "Toton Group" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universitas Islam Indonesia" },
+      "sameAs": ["https://github.com/nrandran", "https://www.instagram.com/nrandran/"],
+      "knowsAbout": ["HRIS", "Payroll", "Single Sign-On", "RBAC", "OAuth 2.0", "OpenID Connect", "PHP", "Laravel", "JavaScript", "Flutter", "MySQL", "PostgreSQL"]
+    }
+    </script>
+</head>
+
+<body>
+
+<!-- ============ SVG ICON SPRITE (UI icons only) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+        <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+        <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.500l4.500 4.500L19 7.500"/></symbol>
+    </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="curtain" aria-hidden="true"><span class="curtain__mark">NSA</span></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ================= NAVIGATION ================= -->
+<header class="nav" id="nav">
+    <div class="wrap nav__in">
+        <a class="brand" href="#home" aria-label="Nurandra Satya Adhi, back to top">
+            <span class="brand__mark" aria-hidden="true"><b>N</b></span>
+            <span class="brand__name">Nurandra<br>Satya Adhi</span>
+        </a>
+        <nav class="nav__links" id="navLinks" aria-label="Primary">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#business">Business &amp; Creative</a>
+            <a href="#contact">Contact</a>
+            <span class="nav__bar" aria-hidden="true"></span>
+        </nav>
+        <a class="btn btn--primary btn--sm nav__cta" href="https://wa.me/6289649185124?text=Hello%20Nurandra%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss." target="_blank" rel="noopener"><span>Contact me</span><svg class="i"><use href="#i-arrow"/></svg></a>
+        <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+</header>
+
+<div class="mmenu" id="mobileMenu" aria-hidden="true">
+    <nav class="mmenu__in" aria-label="Mobile">
+        <a href="#home"><i>01</i>Home</a>
+        <a href="#about"><i>02</i>About</a>
+        <a href="#skills"><i>03</i>Skills &amp; Technologies</a>
+        <a href="#projects"><i>04</i>Featured Projects</a>
+        <a href="#experience"><i>05</i>Experience</a>
+        <a href="#business"><i>06</i>Business &amp; Creative</a>
+        <a href="#contact"><i>07</i>Contact</a>
+    </nav>
+    <p class="mmenu__foot mono">Yogyakarta, Indonesia · nurandra770@gmail.com</p>
+</div>
+
+<main id="main">
+
+    <!-- ================= 01 HOME / HERO ================= -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero__bg" aria-hidden="true">
+            <span class="blob blob--a"></span>
+            <span class="blob blob--b"></span>
+            <span class="hero__grid"></span>
+            <span class="hero__stripes"></span>
+        </div>
+        <div class="hero__panel" aria-hidden="true" data-mode="scroll" data-speed="0.05"></div>
+
+        <div class="wrap hero__top">
+            <p class="hero__status hero-in" style="--i:0"><span class="dot"></span>Open for full-time roles &amp; freelance</p>
+            <p class="hero__loc mono hero-in" style="--i:1">Yogyakarta, ID<span> — Portfolio 2026</span></p>
+        </div>
+
+        <figure class="hero__portrait" data-mode="scroll" data-speed="-0.06">
+            <img src="aset/web/hero.webp" width="1100" height="1402" alt="Portrait of Nurandra Satya Adhi, Full-Stack Developer" fetchpriority="high">
+        </figure>
+
+        <div class="wrap hero__main">
+            <p class="hero__roles hero-in" style="--i:1"><span>Full-Stack Developer</span><i aria-hidden="true"></i><span>Informatics Graduate</span></p>
+            <h1 class="hero__name" id="hero-title">
+                <span class="ln"><span style="--i:2">Nurandra</span></span>
+                <span class="ln"><span class="grad" style="--i:3">Satya Adhi</span></span>
+            </h1>
+            <div class="hero__copy">
+                <p class="hero__headline hero-in" style="--i:4">Building digital experiences through <em>code &amp; innovation.</em></p>
+                <p class="hero__sub hero-in" style="--i:5">Developing scalable applications, intelligent systems, and digital solutions through technology, creativity, and thoughtful design.</p>
+                <div class="hero__cta hero-in" style="--i:6">
+                    <a class="btn btn--primary" href="#projects"><span>Explore my work</span><svg class="i"><use href="#i-arrow-down"/></svg></a>
+                    <a class="btn btn--ghost" href="CV-Nurandra-Satya-Adhi.pdf" download><span>Download CV</span><svg class="i"><use href="#i-download"/></svg></a>
+                </div>
+            </div>
+        </div>
+
+        <ul class="hero__bar" aria-label="Highlights">
+            <li><b><span data-count="5">5</span></b><span>Systems designed &amp; built</span></li>
+            <li><b><span data-count="3">3</span></b><span>Platforms: Web, Android, iOS</span></li>
+            <li><b><span data-count="1">1</span></b><span>SSO login for many apps</span></li>
+            <li><b><span data-count="100">100</span></b><span>Google PageSpeed score</span></li>
+            <li class="hero__scroll"><a class="scroll" href="#about" aria-label="Scroll to About"><span class="mono">Scroll</span><span class="scroll__line" aria-hidden="true"><i></i></span></a></li>
+        </ul>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+        <div class="wrap">
+            <div class="ticker__pill">
+                <div class="ticker__track">
+                    <span>HRIS</span><span>Single Sign-On</span><span>RBAC</span><span>Payroll</span><span>Flutter</span><span>REST API</span><span>Enterprise Apps</span><span>IoT</span>
+                    <span>HRIS</span><span>Single Sign-On</span><span>RBAC</span><span>Payroll</span><span>Flutter</span><span>REST API</span><span>Enterprise Apps</span><span>IoT</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 02 ABOUT ================= -->
+    <section class="sec sec--light about" id="about" aria-labelledby="about-title">
+        <div class="wrap">
+            <div class="about__grid">
+                <div class="about__visual rv rv--clip">
+                    <div class="about__frame">
+                        <span class="about__rings" aria-hidden="true"></span>
+                        <img src="aset/web/about.webp" width="1000" height="1232" alt="Nurandra Satya Adhi" loading="lazy" data-speed="0.04">
+                        <p class="about__chip mono"><b>S1</b> Informatics · UII</p>
+                    </div>
+                </div>
+
+                <div class="about__text">
+                    <header class="sh rv">
+                        <p class="eyebrow"><b>02</b>About</p>
+                        <h2 class="h-xl" id="about-title">From requirements to production. <em>One developer, the whole stack.</em></h2>
+                    </header>
+                    <div class="about__copy rv">
+                        <p class="lead">I am an Informatics graduate of Universitas Islam Indonesia with a strong interest in application development, system design, enterprise solutions, and digital technology.</p>
+                        <p>I have experience building web and mobile applications, developing integrated systems, managing databases, and delivering digital solutions with a user-centered design approach.</p>
+                        <p>At Toton Group I design and build an end-to-end HRIS ecosystem: <mark>GAIA Core</mark>, <mark>TechTon HR Portal</mark> and <mark>TechTon PAS Mobile</mark>. I turn HR and management needs into secure, documented systems that people use every day, and I present them to upper management.</p>
+                    </div>
+                    <dl class="facts rv">
+                        <div><dt>Based in</dt><dd>Yogyakarta, Indonesia</dd></div>
+                        <div><dt>Degree</dt><dd>S1 Informatics, UII<small>Oct 2022 — Jan 2026</small></dd></div>
+                        <div><dt>GPA</dt><dd><span data-count="3.63" data-decimals="2">3.63</span> / 4.00<small>Faculty of Industrial Technology</small></dd></div>
+                        <div><dt>English</dt><dd>CEPT score 500<small>CILACS UII · Oct 2025</small></dd></div>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="focus rv" role="list" aria-label="Focus areas">
+                <h3 class="focus__title mono">Focus areas</h3>
+                <a class="focus__row" role="listitem" href="#skills"><span class="focus__n">01</span><span class="focus__t">Full-Stack Web Development</span><span class="focus__d">PHP · Laravel · JavaScript · React</span><svg class="i"><use href="#i-arrow-ur"/></svg></a>
+                <a class="focus__row" role="listitem" href="#project-portal"><span class="focus__n">02</span><span class="focus__t">Enterprise Application Development</span><span class="focus__d">HRIS · Payroll · Approval workflows</span><svg class="i"><use href="#i-arrow-ur"/></svg></a>
+                <a class="focus__row" role="listitem" href="#project-mobile"><span class="focus__n">03</span><span class="focus__t">Mobile Application Development</span><span class="focus__d">Flutter · Android &amp; iOS · Biometrics</span><svg class="i"><use href="#i-arrow-ur"/></svg></a>
+                <a class="focus__row" role="listitem" href="#project-gaia"><span class="focus__n">04</span><span class="focus__t">System Architecture &amp; Design</span><span class="focus__d">MVC · REST API · SSO · RBAC</span><svg class="i"><use href="#i-arrow-ur"/></svg></a>
+                <a class="focus__row" role="listitem" href="#skills"><span class="focus__n">05</span><span class="focus__t">Database Management</span><span class="focus__d">MySQL · MariaDB · PostgreSQL</span><svg class="i"><use href="#i-arrow-ur"/></svg></a>
+                <a class="focus__row" role="listitem" href="studi-kasus-ui.html"><span class="focus__n">06</span><span class="focus__t">UI/UX &amp; Digital Experience</span><span class="focus__d">Figma · Design to production</span><svg class="i"><use href="#i-arrow-ur"/></svg></a>
+                <a class="focus__row" role="listitem" href="#project-farm"><span class="focus__n">07</span><span class="focus__t">IoT &amp; Smart Systems</span><span class="focus__d">Sensors · Monitoring · Data visualization</span><svg class="i"><use href="#i-arrow-ur"/></svg></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 03 SKILLS & TECHNOLOGIES ================= -->
+    <section class="sec sec--dark skills" id="skills" aria-labelledby="skills-title">
+        <div class="skills__glow" aria-hidden="true"></div>
+        <div class="wrap">
+            <header class="sh sh--split rv">
+                <div>
+                    <p class="eyebrow"><b>03</b>Skills &amp; Technologies</p>
+                    <h2 class="h-xl" id="skills-title">The stack behind <em>the systems.</em></h2>
+                </div>
+                <p class="sh__aside">Tools I use in production, from the database to the screen in your pocket. Hover or focus a logo to see its name.</p>
+            </header>
+
+            <div class="stack">
+                <section class="stack__row rv" aria-labelledby="st-lang">
+                    <header class="stack__head"><span class="mono">01</span><h3 id="st-lang">Programming Languages</h3><span class="stack__count mono">08</span></header>
+                    <ul class="tiles">
+                        <li class="tile" tabindex="0" style="--brand:#777BB4;--icon:url(aset/tech/php.svg)"><span class="tile__ico"></span><span class="tile__name">PHP</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#5382A1;--icon:url(aset/tech/java.svg)"><span class="tile__ico"></span><span class="tile__name">Java</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#F7DF1E;--icon:url(aset/tech/javascript.svg)"><span class="tile__ico"></span><span class="tile__name">JavaScript</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#3776AB;--icon:url(aset/tech/python.svg)"><span class="tile__ico"></span><span class="tile__name">Python</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#0175C2;--icon:url(aset/tech/dart.svg)"><span class="tile__ico"></span><span class="tile__name">Dart</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#E34F26;--icon:url(aset/tech/html5.svg)"><span class="tile__ico"></span><span class="tile__name">HTML5</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#1572B6;--icon:url(aset/tech/css3.svg)"><span class="tile__ico"></span><span class="tile__name">CSS3</span></li>
+                        <li class="tile tile--generic" tabindex="0" style="--icon:url(aset/tech/sql.svg)"><span class="tile__ico"></span><span class="tile__name">SQL</span></li>
+                    </ul>
+                </section>
+
+                <section class="stack__row rv" aria-labelledby="st-fw">
+                    <header class="stack__head"><span class="mono">02</span><h3 id="st-fw">Frameworks &amp; Development</h3><span class="stack__count mono">09</span></header>
+                    <ul class="tiles">
+                        <li class="tile" tabindex="0" style="--brand:#02569B;--icon:url(aset/tech/flutter.svg)"><span class="tile__ico"></span><span class="tile__name">Flutter</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#61DAFB;--icon:url(aset/tech/react.svg)"><span class="tile__ico"></span><span class="tile__name">React</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#FFFFFF;--icon:url(aset/tech/nextdotjs.svg)"><span class="tile__ico"></span><span class="tile__name">Next.js</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#5FA04E;--icon:url(aset/tech/nodedotjs.svg)"><span class="tile__ico"></span><span class="tile__name">Node.js</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#FF2D20;--icon:url(aset/tech/laravel.svg)"><span class="tile__ico"></span><span class="tile__name">Laravel</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#7952B3;--icon:url(aset/tech/bootstrap.svg)"><span class="tile__ico"></span><span class="tile__name">Bootstrap</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#06B6D4;--icon:url(aset/tech/tailwindcss.svg)"><span class="tile__ico"></span><span class="tile__name">Tailwind CSS</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#0769AD;--icon:url(aset/tech/jquery.svg)"><span class="tile__ico"></span><span class="tile__name">jQuery</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#F7DF1E;--icon:url(aset/tech/javascript.svg)"><span class="tile__ico"></span><span class="tile__name">Native JavaScript</span></li>
+                    </ul>
+                </section>
+
+                <section class="stack__row rv" aria-labelledby="st-db">
+                    <header class="stack__head"><span class="mono">03</span><h3 id="st-db">Database &amp; Infrastructure</h3><span class="stack__count mono">08</span></header>
+                    <ul class="tiles">
+                        <li class="tile" tabindex="0" style="--brand:#4479A1;--icon:url(aset/tech/mysql.svg)"><span class="tile__ico"></span><span class="tile__name">MySQL</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#C0765A;--icon:url(aset/tech/mariadb.svg)"><span class="tile__ico"></span><span class="tile__name">MariaDB</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#4169E1;--icon:url(aset/tech/postgresql.svg)"><span class="tile__ico"></span><span class="tile__name">PostgreSQL</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#F03C2E;--icon:url(aset/tech/git.svg)"><span class="tile__ico"></span><span class="tile__name">Git</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#FFFFFF;--icon:url(aset/tech/github.svg)"><span class="tile__ico"></span><span class="tile__name">GitHub</span></li>
+                        <li class="tile tile--generic" tabindex="0" style="--icon:url(aset/tech/rest-api.svg)"><span class="tile__ico"></span><span class="tile__name">REST API</span></li>
+                        <li class="tile tile--generic" tabindex="0" style="--icon:url(aset/tech/oauth2.svg)"><span class="tile__ico"></span><span class="tile__name">OAuth 2.0</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#F78C40;--icon:url(aset/tech/openid.svg)"><span class="tile__ico"></span><span class="tile__name">OpenID Connect</span></li>
+                    </ul>
+                </section>
+
+                <section class="stack__row rv" aria-labelledby="st-tools">
+                    <header class="stack__head"><span class="mono">04</span><h3 id="st-tools">Tools &amp; Design</h3><span class="stack__count mono">05</span></header>
+                    <ul class="tiles">
+                        <li class="tile" tabindex="0" style="--brand:#F24E1E;--icon:url(aset/tech/figma.svg)"><span class="tile__ico"></span><span class="tile__name">Figma</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#2FA0F2;--icon:url(aset/tech/vscode.svg)"><span class="tile__ico"></span><span class="tile__name">VS Code</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#3DDC84;--icon:url(aset/tech/androidstudio.svg)"><span class="tile__ico"></span><span class="tile__name">Android Studio</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#FF6C37;--icon:url(aset/tech/postman.svg)"><span class="tile__ico"></span><span class="tile__name">Postman</span></li>
+                        <li class="tile" tabindex="0" style="--brand:#FCC624;--icon:url(aset/tech/linux.svg)"><span class="tile__ico"></span><span class="tile__name">Linux</span></li>
+                    </ul>
+                </section>
+            </div>
+
+            <p class="note mono rv">Logos are trademarks of their respective owners, shown for identification. SQL, REST API and OAuth 2.0 are concepts, so they use generic marks.</p>
+
+            <div class="domain rv">
+                <h3 class="mono">Domain &amp; practice</h3>
+                <ul class="chips chips--lg">
+                    <li>HRIS</li><li>Payroll</li><li>Attendance</li><li>Leave &amp; Overtime</li><li>Approval Workflow</li><li>Audit Trail</li><li>Bearer Token</li><li>DataTables</li><li>Black Box Testing</li>
+                </ul>
+            </div>
+
+            <div class="caps">
+                <h3 class="caps__title mono rv">What I deliver</h3>
+                <div class="caps__grid">
+                    <a class="cap rv" href="#project-portal" style="--d:0s"><span class="cap__n">01</span><h4>HRIS &amp; Payroll Systems</h4><p>Attendance, leave and overtime, multi-level approval, payroll, loans and digital payslips.</p><span class="cap__go mono">Proof: TechTon HR Portal <svg class="i"><use href="#i-arrow-ur"/></svg></span></a>
+                    <a class="cap rv" href="#project-gaia" style="--d:.08s"><span class="cap__n">02</span><h4>SSO &amp; Access Management</h4><p>One login for many apps, role-based access and a full audit trail.</p><span class="cap__go mono">Proof: Gaia Core <svg class="i"><use href="#i-arrow-ur"/></svg></span></a>
+                    <a class="cap rv" href="#project-mobile" style="--d:.16s"><span class="cap__n">03</span><h4>Android &amp; iOS Apps</h4><p>Flutter apps with biometric login and secure, tested REST APIs, released to both platforms.</p><span class="cap__go mono">Proof: TechTon PAS Mobile <svg class="i"><use href="#i-arrow-ur"/></svg></span></a>
+                    <a class="cap rv" href="#project-sites" style="--d:.24s"><span class="cap__n">04</span><h4>Company Websites + CMS</h4><p>Fast, responsive websites with a CMS so non-technical teams update content themselves.</p><span class="cap__go mono">Proof: Company websites <svg class="i"><use href="#i-arrow-ur"/></svg></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 04 FEATURED PROJECTS ================= -->
+    <section class="sec sec--navy projects" id="projects" aria-labelledby="projects-title">
+        <div class="wrap">
+            <header class="sh sh--split rv">
+                <div>
+                    <p class="eyebrow"><b>04</b>Featured Projects</p>
+                    <h2 class="h-xl" id="projects-title">Selected work, <em>shipped to production.</em></h2>
+                </div>
+                <p class="sh__aside">Real systems built at Toton Group, plus an IoT research project published in a scientific journal. <a class="link" href="studi-kasus-ui.html">Read the UI/UX case study <svg class="i"><use href="#i-arrow-ur"/></svg></a></p>
+            </header>
+
+            <!-- ---------- 01 GAIA CORE ---------- -->
+            <article class="proj proj--a" id="project-gaia" aria-labelledby="p1-title">
+                <div class="proj__stage rv rv--clip" data-open="dlg-gaia">
+                    <span class="proj__num" aria-hidden="true">01</span>
+                    <img class="proj__mock" src="aset/web/gaia-mockup.webp" width="1800" height="825" alt="Gaia Core system: login, employee data and master data management" loading="lazy">
+                    <figure class="frame proj__shot">
+                        <div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">gaia.smbtgr.dev/akses</span></div>
+                        <img src="aset/web/gaia-akses.webp" width="1279" height="632" alt="Gaia access management page: roles, allowed applications and menu counts" loading="lazy">
+                    </figure>
+                    <span class="proj__view mono">View project <svg class="i"><use href="#i-arrow-ur"/></svg></span>
+                </div>
+                <div class="proj__info rv">
+                    <p class="tag">Enterprise · SSO · RBAC</p>
+                    <h3 id="p1-title">Gaia Core &amp; Enterprise HRIS</h3>
+                    <p class="proj__lead">The identity and access backbone of the company: one internal platform for employee master data, user identity and Single Sign-On across every application.</p>
+                    <ul class="spec">
+                        <li>Single Sign-On (SSO)</li><li>Role-Based Access Control (RBAC)</li><li>OAuth 2.0 / OpenID Connect</li><li>Master User Management</li><li>HRIS Integration</li><li>Audit Trail</li><li>Dynamic Application Management</li>
+                    </ul>
+                    <p class="proj__role"><b>My contribution</b> Designed in Figma and built from scratch on a PHP MVC architecture: database schema, REST API, access management UI, secure Excel/CSV import and export, security hardening, documentation and black box testing.</p>
+                    <ul class="chips"><li>PHP (MVC)</li><li>MySQL / MariaDB</li><li>REST API</li><li>OAuth 2.0 · OIDC</li><li>Figma</li></ul>
+                    <div class="proj__cta">
+                        <button class="btn btn--primary" type="button" data-open="dlg-gaia"><span>View project</span><svg class="i"><use href="#i-arrow-ur"/></svg></button>
+                        <a class="btn btn--ghost" href="studi-kasus-ui.html"><span>UI case study</span><svg class="i"><use href="#i-arrow"/></svg></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ---------- 02 TECHTON PAS MOBILE ---------- -->
+            <article class="proj proj--b" id="project-mobile" aria-labelledby="p2-title">
+                <div class="proj__stage proj__stage--phone rv rv--clip" data-open="dlg-mobile">
+                    <span class="proj__num" aria-hidden="true">02</span>
+                    <div class="phone proj__phone" data-speed="-0.05">
+                        <span class="phone__notch"></span>
+                        <img src="aset/web/techton-mobile.webp" width="720" height="1456" alt="TechTon PAS Mobile home screen: today's attendance, announcements and menu" loading="lazy">
+                    </div>
+                    <ul class="proj__tags" aria-hidden="true"><li>Android</li><li>iOS</li><li>Flutter</li></ul>
+                    <span class="proj__view mono">View project <svg class="i"><use href="#i-arrow-ur"/></svg></span>
+                </div>
+                <div class="proj__info rv">
+                    <p class="tag">Mobile · Flutter · Android &amp; iOS</p>
+                    <h3 id="p2-title">TechTon PAS Mobile</h3>
+                    <p class="proj__lead">An employee self-service app built from scratch with Flutter. Attendance, leave and payslips in the palm of your hand, signed in through company SSO.</p>
+                    <ul class="spec spec--2">
+                        <li>Android &amp; iOS</li><li>Gaia SSO Integration</li><li>Employee Profile</li><li>Attendance</li><li>Leave &amp; Permission</li><li>Payroll Slip</li><li>Biometric Authentication</li>
+                    </ul>
+                    <p class="proj__role"><b>My contribution</b> Built the whole app: SSO login locked behind Fingerprint / Face ID, photo attendance with automatic compression, approvals, PIN-protected PDF payslips. REST API secured and tested with Postman, released to iOS with an iPhone-responsive layout.</p>
+                    <ul class="chips"><li>Flutter</li><li>Dart</li><li>REST API</li><li>Postman</li><li>SSO</li><li>Biometrics</li></ul>
+                    <div class="proj__cta">
+                        <button class="btn btn--primary" type="button" data-open="dlg-mobile"><span>View project</span><svg class="i"><use href="#i-arrow-ur"/></svg></button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ---------- 03 TECHTON HR PORTAL ---------- -->
+            <article class="proj proj--c" id="project-portal" aria-labelledby="p3-title">
+                <div class="proj__stage proj__stage--wide rv rv--clip" data-open="dlg-portal">
+                    <span class="proj__num" aria-hidden="true">03</span>
+                    <figure class="frame proj__wide" data-speed="0.04">
+                        <div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">pas.smbtgr.dev/dashboard</span></div>
+                        <img src="aset/web/techton-portal.webp" width="1279" height="629" alt="TechTon HR Portal dashboard: attendance, leave and permission, overtime, payslip and AI help chat" loading="lazy">
+                    </figure>
+                    <span class="proj__view mono">View project <svg class="i"><use href="#i-arrow-ur"/></svg></span>
+                </div>
+                <div class="proj__row">
+                    <div class="proj__info rv">
+                        <p class="tag">Web · HRIS · Enterprise</p>
+                        <h3 id="p3-title">TechTon HR Portal</h3>
+                        <p class="proj__lead">A web HRIS for HR and administrators: attendance, leave and overtime approval, and payroll in one place, with configurable approval levels and tight access control.</p>
+                        <div class="proj__cta">
+                            <button class="btn btn--primary" type="button" data-open="dlg-portal"><span>View project</span><svg class="i"><use href="#i-arrow-ur"/></svg></button>
+                        </div>
+                    </div>
+                    <div class="proj__info rv" style="--d:.1s">
+                        <h4 class="mono">Capabilities</h4>
+                        <ul class="spec spec--2">
+                            <li>Attendance Management</li><li>Payroll Management</li><li>Employee Management</li><li>Leave Approval</li><li>Overtime Approval</li><li>Excel Export</li><li>Dynamic Reporting</li>
+                        </ul>
+                    </div>
+                    <div class="proj__info rv" style="--d:.2s">
+                        <p class="proj__role"><b>My contribution</b> Multi-level approval flows, payroll formula components and period closing with backdate validation, watermarked PIN-protected PDF payslips, server-side pagination, and <code>checkRBAC</code> on every controller.</p>
+                        <ul class="chips"><li>PHP</li><li>JavaScript</li><li>MySQL</li><li>DataTables</li><li>REST API</li></ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ---------- 04 SMART FARMING IOT ---------- -->
+            <article class="proj proj--d" id="project-farm" aria-labelledby="p4-title">
+                <div class="proj__stage proj__stage--collage rv rv--clip" data-open="dlg-farm">
+                    <span class="proj__num" aria-hidden="true">04</span>
+                    <div class="collage">
+                        <div class="collage__field"><img src="aset/web/sf-field.webp" width="1000" height="1333" alt="IoT sensor in a rice field with the app showing temperature and humidity" loading="lazy"></div>
+                        <div class="phone phone--sm collage__p1" data-speed="-0.08"><span class="phone__notch"></span><img src="aset/web/sf-home.webp" width="720" height="1446" alt="Smart Farm home screen showing normal conditions and prediction" loading="lazy"></div>
+                        <div class="phone phone--sm collage__p2" data-speed="-0.16"><span class="phone__notch"></span><img src="aset/web/sf-forecast.webp" width="720" height="1281" alt="Five-day weather and soil forecast in the Smart Farm app" loading="lazy"></div>
+                    </div>
+                    <span class="proj__view mono">View project <svg class="i"><use href="#i-arrow-ur"/></svg></span>
+                </div>
+                <div class="proj__info rv">
+                    <p class="tag">Individual · Mobile · IoT · Research</p>
+                    <h3 id="p4-title">Smart Farming IoT</h3>
+                    <p class="proj__lead">A mobile app that monitors farmland in real time from IoT sensors, with a 5-day forecast, designed with an interface friendly to traditional farmers.</p>
+                    <div class="metrics">
+                        <div class="metric"><b><span data-count="86">86</span><small>/100</small></b><span>SUS usability score</span></div>
+                        <div class="metric"><b>Journal</b><span>Published research</span></div>
+                    </div>
+                    <ul class="spec spec--2">
+                        <li>IoT Integration</li><li>Temperature Monitoring</li><li>Humidity Monitoring</li><li>Light Intensity Monitoring</li><li>Data Visualization</li><li>Smart Agriculture</li>
+                    </ul>
+                    <p class="proj__role"><b>My contribution</b> Individual project: designed and built the mobile app with an interface made for traditional farmers. The research was published in a scientific journal.</p>
+                    <ul class="chips"><li>Mobile app</li><li>IoT sensors</li><li>Data visualization</li><li>5-day forecast</li></ul>
+                    <div class="proj__cta">
+                        <button class="btn btn--primary" type="button" data-open="dlg-farm"><span>View project</span><svg class="i"><use href="#i-arrow-ur"/></svg></button>
+                        <a class="btn btn--ghost" href="https://github.com/nrandran/smartfarm1.git" target="_blank" rel="noopener"><span>GitHub repo</span><svg class="i"><use href="#i-arrow-ur"/></svg></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ---------- 05 COMPANY WEBSITES ---------- -->
+            <div class="sites" id="project-sites">
+                <header class="sites__head rv">
+                    <p class="eyebrow"><b>05</b>Company Websites · Toton Group</p>
+                    <h3 class="h-lg">Websites that carry <em>the group's brands.</em></h3>
+                </header>
+
+                <article class="site site--lead rv" aria-labelledby="s1-title">
+                    <div class="site__stage" data-open="dlg-smb">
+                        <figure class="frame site__f1" data-speed="0.03"><div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">smb-tgr.com</span></div><img src="aset/web/smb-landing.webp" width="1279" height="631" alt="Toton Group (SMB-TGR) landing page" loading="lazy"></figure>
+                        <figure class="frame site__f2" data-speed="-0.04"><div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">smb-tgr.com/cms</span></div><img src="aset/web/smb-cms.webp" width="1279" height="631" alt="SMB-TGR CMS admin: website content, business units, news, seasonal themes, media library" loading="lazy"></figure>
+                        <figure class="frame site__f3" data-speed="-0.1"><div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">smb-tgr.com/sso/dashboard</span></div><img src="aset/web/smb-portal.webp" width="1279" height="629" alt="SMB-TGR SSO portal dashboard with per-division access" loading="lazy"></figure>
+                        <div class="psi" aria-label="Google PageSpeed score 100"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="psi__bg"/><circle cx="60" cy="60" r="52" class="psi__fg"/></svg><b>100</b><span class="mono">PageSpeed</span></div>
+                    </div>
+                    <div class="site__info">
+                        <p class="tag">Website · CMS · SSO Portal</p>
+                        <h4 id="s1-title">SMB-TGR Website &amp; SSO Portal</h4>
+                        <p>The digital face of Toton Group: a responsive landing page with a CMS non-technical teams can run, plus an SSO portal giving access to per-division applications. Optimized to a Google PageSpeed score of 100, hardened and hosted by me.</p>
+                        <ul class="chips"><li>Landing page</li><li>CMS</li><li>SSO portal</li><li>File manager</li><li>Hosting</li></ul>
+                        <div class="proj__cta"><button class="btn btn--primary" type="button" data-open="dlg-smb"><span>View project</span><svg class="i"><use href="#i-arrow-ur"/></svg></button></div>
+                    </div>
+                </article>
+
+                <div class="site-pair">
+                    <article class="site rv" aria-labelledby="s2-title">
+                        <div class="site__stage site__stage--ill" data-open="dlg-sta">
+                            <figure class="frame">
+                                <div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">Sumber Toton Abadi</span></div>
+                                <img src="aset/web/sta-1.webp" width="1279" height="630" alt="STA corporate website home page: PT Sumber Toton Abadi construction services" loading="lazy">
+                            </figure>
+                            
+                        </div>
+                        <div class="site__info">
+                            <p class="tag">Corporate website · Bilingual</p>
+                            <h4 id="s2-title">STA — PT Sumber Toton Abadi</h4>
+                            <p>Corporate website for the construction services company under Toton Group, with bilingual ID/EN content covering roads, drainage, ports, dams, bridges, flyovers and buildings.</p>
+                            <ul class="chips"><li>Responsive</li><li>ID / EN</li><li>Services</li><li>Projects &amp; News</li></ul>
+                            <div class="proj__cta"><button class="btn btn--primary" type="button" data-open="dlg-sta"><span>View project</span><svg class="i"><use href="#i-arrow-ur"/></svg></button></div>
+                        </div>
+                    </article>
+
+                    <article class="site rv" style="--d:.1s" aria-labelledby="s3-title">
+                        <div class="site__stage site__stage--ill" data-open="dlg-hills">
+                            <figure class="frame">
+                                <div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">Toton Hills</span></div>
+                                <img src="aset/web/toton-hills-1.webp" width="1279" height="630" alt="Toton Hills website home page: two-storey homes in Jatiasih, Bekasi" loading="lazy">
+                            </figure>
+                            
+                        </div>
+                        <div class="site__info">
+                            <p class="tag">Property website · Lead generation</p>
+                            <h4 id="s3-title">Toton Hills</h4>
+                            <p>Marketing website for a two-storey residential development in Jatiasih, Bekasi: house types and pricing, installment simulation, facilities, location, FAQ and a WhatsApp brochure request.</p>
+                            <ul class="chips"><li>Responsive</li><li>ID / EN</li><li>Installment simulator</li><li>WhatsApp CTA</li></ul>
+                            <div class="proj__cta"><button class="btn btn--primary" type="button" data-open="dlg-hills"><span>View project</span><svg class="i"><use href="#i-arrow-ur"/></svg></button></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 05 EXPERIENCE ================= -->
+    <section class="sec sec--light exp" id="experience" aria-labelledby="exp-title">
+        <div class="wrap">
+            <header class="sh rv">
+                <p class="eyebrow"><b>05</b>Experience</p>
+                <h2 class="h-xl" id="exp-title">From analysis to <em>a live system.</em></h2>
+            </header>
+
+            <div class="job rv">
+                <div class="job__meta">
+                    <p class="mono">May 2026 — Present</p>
+                    <h3>Staff IT</h3>
+                    <p class="job__co">Toton Group</p>
+                </div>
+                <div class="job__body">
+                    <p class="lead">End-to-end internal system development, from requirements analysis to live systems that people use every day.</p>
+                    <ol class="pipe" aria-label="Delivery pipeline">
+                        <li>Analysis</li><li>UI/UX · Figma</li><li>Backend</li><li>Integration</li><li>Testing</li><li>Hosting</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="eco">
+                <div class="eco__head rv">
+                    <h3 class="h-lg">One account, <em>many apps.</em></h3>
+                    <p>GAIA Core is the identity and access hub. Every application below signs in through GAIA, and menu access is managed by admins from one place. <span class="mono">System map, not a screenshot.</span></p>
+                </div>
+                <div class="eco__map">
+                    <div class="eco__core rv">
+                        <span class="eco__hex" aria-hidden="true">G</span>
+                        <h4>GAIA Core</h4>
+                        <p>Identity · SSO · RBAC · HRIS master data</p>
+                    </div>
+                    <span class="eco__link" aria-hidden="true"></span>
+                    <ul class="eco__apps">
+                        <li class="rv" style="--d:.1s"><a href="#project-portal"><b>TechTon HR Portal</b><span>HRIS web for HR &amp; admins</span><svg class="i"><use href="#i-arrow-ur"/></svg></a></li>
+                        <li class="rv" style="--d:.2s"><a href="#project-mobile"><b>TechTon PAS Mobile</b><span>Employee self-service · Android &amp; iOS</span><svg class="i"><use href="#i-arrow-ur"/></svg></a></li>
+                        <li class="rv" style="--d:.3s"><a href="#project-sites"><b>SMB-TGR Portal &amp; Website</b><span>SSO portal per division · landing page &amp; CMS</span><svg class="i"><use href="#i-arrow-ur"/></svg></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="beyond">
+                <h3 class="beyond__title mono rv">Beyond the code</h3>
+                <div class="beyond__grid">
+                    <article class="rv"><span class="beyond__n">A</span><h4>Research &amp; presentation</h4><ul><li>Presented GAIA &amp; TechTon PAS to upper management</li><li>Research and discussions with the IT &amp; HR managers on SSO and payroll</li><li>Drafted a VPS package proposal</li></ul></article>
+                    <article class="rv" style="--d:.1s"><span class="beyond__n">B</span><h4>Training &amp; documentation</h4><ul><li>Trained users: HR and the Hunter team</li><li>Wrote system documentation</li><li>Designed a logo and company profile</li></ul></article>
+                    <article class="rv" style="--d:.2s"><span class="beyond__n">C</span><h4>IT operations support</h4><ul><li>Printers &amp; scanners</li><li>Network and device backups</li><li>Fingerprint attendance machines</li></ul></article>
+                </div>
+            </div>
+
+            <!-- Category 01: individual -->
+            <div class="cat">
+                <header class="cat__head rv"><p class="mono">Category 01</p><h3>Individual Projects</h3></header>
+                <article class="indiv rv">
+                    <div class="indiv__img"><img src="aset/web/sf-field.webp" width="1000" height="1333" alt="IoT sensor used in the Smart Farming project" loading="lazy"></div>
+                    <div class="indiv__body">
+                        <p class="tag tag--ink">Mobile · IoT · Research</p>
+                        <h4>Smart Farming App</h4>
+                        <p>Real-time farmland monitoring from IoT sensors with a 5-day forecast. Usability scored 86/100 on the SUS scale and the research was published in a scientific journal.</p>
+                        <div class="proj__cta">
+                            <a class="btn btn--ink" href="#project-farm"><span>Featured project</span><svg class="i"><use href="#i-arrow-down"/></svg></a>
+                            <a class="btn btn--line" href="https://ijicom.respati.ac.id/index.php/ijicom/article/view/173" target="_blank" rel="noopener"><span>Read the journal</span><svg class="i"><use href="#i-arrow-ur"/></svg></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Category 02: team -->
+            <div class="cat">
+                <header class="cat__head rv"><p class="mono">Category 02</p><h3>Team Projects</h3></header>
+                <div class="posters">
+                    <a class="poster rv" href="https://informatics-expo.id/en/karya/837" target="_blank" rel="noopener">
+                        <div class="poster__img"><img src="aset/web/prolift.webp" width="900" height="1273" alt="Prolift project poster, a gym tracker app" loading="lazy"></div>
+                        <div class="poster__body"><p class="tag tag--ink">Team of 4 · Mobile App</p><h4>Prolift</h4><p>A gym tracker with gamification: challenges, rewards, a leaderboard and interactive statistics to keep workout motivation up.</p><span class="link">View on Informatics Expo <svg class="i"><use href="#i-arrow-ur"/></svg></span></div>
+                    </a>
+                    <a class="poster rv" style="--d:.1s" href="https://informatics-expo.id/en/karya/586" target="_blank" rel="noopener">
+                        <div class="poster__img"><img src="aset/web/culturavista.webp" width="800" height="1133" alt="Culturavista project poster, a cultural heritage information platform" loading="lazy"></div>
+                        <div class="poster__body"><p class="tag tag--ink">Team of 4 · Web App</p><h4>Culturavista</h4><p>A web platform on Indonesian cultural heritage sites, from history to facilities, built to raise appreciation of culture.</p><span class="link">View on Informatics Expo <svg class="i"><use href="#i-arrow-ur"/></svg></span></div>
+                    </a>
+                    <a class="poster rv" style="--d:.2s" href="https://informatics-expo.id/en/karya/844" target="_blank" rel="noopener">
+                        <div class="poster__img"><img src="aset/web/balap-kalcer.webp" width="900" height="1256" alt="Balap Kalcer project poster, a motorbike racing game" loading="lazy"></div>
+                        <div class="poster__body"><p class="tag tag--ink">Team of 3 · Game</p><h4>Balap Kalcer</h4><p>A head-to-head motorbike racing game on a straight track, with vehicle performance upgrades and an immersive story.</p><span class="link">View on Informatics Expo <svg class="i"><use href="#i-arrow-ur"/></svg></span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 06 BUSINESS & CREATIVE ================= -->
+    <section class="sec sec--dark biz" id="business" aria-labelledby="biz-title">
+        <div class="skills__glow skills__glow--r" aria-hidden="true"></div>
+        <div class="wrap">
+            <header class="sh rv">
+                <p class="eyebrow"><b>06</b>Business &amp; Creative</p>
+                <h2 class="h-xl" id="biz-title">I know how to sell, <em>not only how to build.</em></h2>
+            </header>
+
+            <!-- Category 03: business -->
+            <div class="cat cat--dark">
+                <header class="cat__head rv"><p class="mono">Category 03</p><h3>Business &amp; Sales</h3></header>
+                <article class="prodaes">
+                    <div class="prodaes__copy rv">
+                        <p class="tag">Owner · Online thrift business · Feb 2024 — Nov 2025</p>
+                        <h4>Prodaes</h4>
+                        <p class="lead">An online thrift business I ran on my own, from choosing products to producing promotional content.</p>
+                        <div class="metrics">
+                            <div class="metric"><b><span data-count="600" data-suffix="+">600+</span></b><span>Products sold</span></div>
+                            <div class="metric"><b><span data-count="4.7" data-decimals="1">4.7</span><small>/5</small></b><span>Buyer rating</span></div>
+                        </div>
+                        <ul class="chips chips--lg"><li>Sourcing</li><li>Promotion</li><li>Content creation</li><li>Distribution</li></ul>
+                        <ul class="ticks">
+                            <li><svg class="i"><use href="#i-check"/></svg>Managed sourcing, distribution and digital marketing</li>
+                            <li><svg class="i"><use href="#i-check"/></svg>Created promotional content that increased engagement</li>
+                        </ul>
+                        <img class="prodaes__rating" src="aset/web/prodaes-rating.webp" width="900" height="112" alt="Prodaes store rating of 4.7 from 603 reviews on the marketplace" loading="lazy">
+                    </div>
+                    <div class="prodaes__visual rv rv--clip">
+                        <div class="prodaes__vest" data-speed="0.05"><img src="aset/web/prodaes-vest.webp" width="638" height="645" alt="Prodaes vests in black and cream" loading="lazy"></div>
+                        <div class="phone phone--sm prodaes__p1" data-speed="-0.06"><span class="phone__notch"></span><img src="aset/web/prodaes-shopee.webp" width="739" height="1402" alt="Prodaes store page on the marketplace" loading="lazy"></div>
+                        <div class="phone phone--sm prodaes__p2" data-speed="-0.14"><span class="phone__notch"></span><img src="aset/web/prodaes-ig.webp" width="800" height="1265" alt="Prodaes Instagram profile" loading="lazy"></div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Category 04: organization -->
+            <div class="cat cat--dark">
+                <header class="cat__head rv"><p class="mono">Category 04</p><h3>Organization</h3></header>
+                <div class="org">
+                    <ul class="org__roles">
+                        <li class="rv"><span class="org__n mono">01</span><div><b>Unit Leader, KKN UII</b><span>Team management &amp; work programs</span></div></li>
+                        <li class="rv" style="--d:.08s"><span class="org__n mono">02</span><div><b>Publication &amp; Documentation Staff</b><span>Department &amp; Faculty competitions</span></div></li>
+                        <li class="rv" style="--d:.16s"><span class="org__n mono">03</span><div><b>Organizing Committee</b><span>Pesona Ta'aruf UII 2024</span></div></li>
+                    </ul>
+                    <div class="org__photos">
+                        <figure class="op op1 rv rv--clip" data-speed="0.04"><img src="aset/web/org-kkn.webp" width="800" height="990" alt="Nurandra as Unit Leader of KKN UII" loading="lazy"><figcaption>Unit Leader · KKN</figcaption></figure>
+                        <figure class="op op2 rv rv--clip" style="--d:.1s" data-speed="-0.07"><img src="aset/web/org-pdd.webp" width="800" height="790" alt="Nurandra as Publication and Documentation staff" loading="lazy"><figcaption>Publication · Department</figcaption></figure>
+                        <figure class="op op3 rv rv--clip" style="--d:.2s" data-speed="0.03"><img src="aset/web/org-staf-ahli.webp" width="800" height="788" alt="Nurandra as expert staff of Publication and Documentation" loading="lazy"><figcaption>Publication · Faculty</figcaption></figure>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 05: talent & creative -->
+            <div class="cat cat--dark">
+                <header class="cat__head rv"><p class="mono">Category 05</p><h3>Talent &amp; Creative Activities</h3></header>
+                <div class="talent">
+                    <div class="talent__note rv">
+                        <span class="talent__big" aria-label="74.2 thousand views">74.2K</span>
+                        <div>
+                            <h4>Content watched <em>tens of thousands of times.</em></h4>
+                            <p>Campus TikTok content talent and the Pesona Ta'aruf UII 2024 teaser: learning to deliver a message to a wide audience.</p>
+                        </div>
+                    </div>
+                    <div class="talent__strip rv" style="--d:.1s">
+                        <figure class="tl tl--wide"><img src="aset/web/talent-3.webp" width="1000" height="627" alt="Campus TikTok content, 'Jangan Tolak Cintaku' and 'Bus I'm UII', up to 74.2K views" loading="lazy"><figcaption><b>74.2K</b> views</figcaption></figure>
+                        <figure class="tl tl--teaser"><img src="aset/web/talent-2.webp" width="1000" height="495" alt="Pesona Ta'aruf UII 2024 teaser on Instagram, 1.9K likes" loading="lazy"><figcaption><b>1.9K</b> likes</figcaption></figure>
+                        <figure class="tl tl--tall"><img src="aset/web/talent-1.webp" width="250" height="332" alt="TikTok content 'Pesona Anak Teknik UII', 13.8K views" loading="lazy"><figcaption><b>13.8K</b></figcaption></figure>
+                        <figure class="tl tl--tall"><img src="aset/web/talent-4.webp" width="250" height="333" alt="TikTok content 'Salat saat banyak pikiran', 6K views" loading="lazy"><figcaption><b>6K</b></figcaption></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="comp" aria-label="Supporting competencies">
+            <div class="comp__track">
+                <span>Communication &amp; presentation</span><i aria-hidden="true"></i><span>Systematic problem solving</span><i aria-hidden="true"></i><span>Cross-division collaboration</span><i aria-hidden="true"></i><span>Fast learner</span><i aria-hidden="true"></i><span>Content creation &amp; digital marketing</span><i aria-hidden="true"></i>
+                <span aria-hidden="true">Communication &amp; presentation</span><i aria-hidden="true"></i><span aria-hidden="true">Systematic problem solving</span><i aria-hidden="true"></i><span aria-hidden="true">Cross-division collaboration</span><i aria-hidden="true"></i><span aria-hidden="true">Fast learner</span><i aria-hidden="true"></i><span aria-hidden="true">Content creation &amp; digital marketing</span><i aria-hidden="true"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 07 CONTACT ================= -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact__bg" aria-hidden="true"><span class="blob blob--c"></span><span class="hero__grid"></span><span class="hero__stripes"></span></div>
+        <div class="wrap contact__wrap">
+            <p class="eyebrow rv"><b>07</b>Contact</p>
+            <h2 class="contact__title rv" id="contact-title">
+                <span class="ln"><span style="--i:0">Let's build</span></span>
+                <span class="ln"><span style="--i:1">something great</span></span>
+                <span class="ln"><span class="grad" style="--i:2">together.</span></span>
+            </h2>
+            <div class="contact__grid">
+                <div class="contact__copy rv">
+                    <p class="lead">Have an interesting project or opportunity? Let's connect and create something meaningful.</p>
+                    <p>Open to Full-Stack, Web and Mobile Developer roles, freelance projects and system development collaborations. Replies are usually fastest on WhatsApp.</p>
+                </div>
+                <ul class="clinks">
+                    <li class="rv"><a class="clink clink--main" href="https://wa.me/6289649185124?text=Hello%20Nurandra%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss." target="_blank" rel="noopener"><span class="clink__ico" style="--icon:url(aset/tech/whatsapp.svg)" aria-hidden="true"></span><span class="clink__l mono">WhatsApp</span><b>0896 4918 5124</b><svg class="i"><use href="#i-arrow-ur"/></svg></a></li>
+                    <li class="rv" style="--d:.06s"><a class="clink" href="mailto:nurandra770@gmail.com"><span class="clink__ico" style="--icon:url(aset/tech/gmail.svg)" aria-hidden="true"></span><span class="clink__l mono">Email</span><b>nurandra770@gmail.com</b><svg class="i"><use href="#i-arrow-ur"/></svg></a></li>
+                    <li class="rv" style="--d:.12s"><a class="clink" href="https://github.com/nrandran" target="_blank" rel="noopener"><span class="clink__ico" style="--icon:url(aset/tech/github.svg)" aria-hidden="true"></span><span class="clink__l mono">GitHub</span><b>github.com/nrandran</b><svg class="i"><use href="#i-arrow-ur"/></svg></a></li>
+                    <li class="rv" style="--d:.18s"><a class="clink" href="https://www.instagram.com/nrandran/" target="_blank" rel="noopener"><span class="clink__ico" style="--icon:url(aset/tech/instagram.svg)" aria-hidden="true"></span><span class="clink__l mono">Instagram</span><b>@nrandran</b><svg class="i"><use href="#i-arrow-ur"/></svg></a></li>
+                    <li class="rv" style="--d:.24s"><a class="clink" href="CV-Nurandra-Satya-Adhi.pdf" download><span class="clink__ico clink__ico--dl" aria-hidden="true"><svg class="i"><use href="#i-download"/></svg></span><span class="clink__l mono">Curriculum Vitae</span><b>Download CV (PDF)</b><svg class="i"><use href="#i-arrow-ur"/></svg></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROJECT DIALOGS ================= -->
+    <dialog class="dlg" id="dlg-gaia" aria-labelledby="dlg-gaia-t">
+        <div class="dlg__box">
+            <button class="dlg__close" type="button" data-close aria-label="Close dialog"><svg class="i"><use href="#i-close"/></svg></button>
+            <header class="dlg__head"><p class="tag">Core system · HRIS · SSO</p><h3 id="dlg-gaia-t">Gaia Core &amp; Enterprise HRIS</h3><p class="lead">A core HRIS platform built from scratch: employee master data, user identity and Single Sign-On for every company application.</p></header>
+            <div class="dlg__body">
+                <ol class="steps">
+                    <li><h4>Built from scratch</h4><p>From the Figma design and MVC architecture to the backend: complete employee data, master units, divisions and positions, and user management in one platform.</p></li>
+                    <li><h4>Centralized SSO</h4><p>One account for many apps, using OAuth 2.0 / OpenID Connect. Employees remember a single password and admins manage accounts in one place.</p></li>
+                    <li><h4>Role-group RBAC</h4><p>Admins create roles, choose the applications and menus each role may open, then add members. Applications are registered and managed dynamically, so access is controlled from one center.</p></li>
+                    <li><h4>Secure, documented, tested</h4><p>API security, Audit Trail and employee data history, safe Excel / CSV import and export, plus thorough documentation and black box testing.</p></li>
+                </ol>
+                <figure class="flow" aria-label="Single sign-on flow diagram">
+                    <span class="flow__node">Employee</span><svg class="i"><use href="#i-arrow"/></svg><span class="flow__node flow__node--core">GAIA Core</span><svg class="i"><use href="#i-arrow"/></svg>
+                    <span class="flow__apps"><em>TechTon HR Portal</em><em>TechTon PAS Mobile</em><em>SMB-TGR Portal</em></span>
+                    <figcaption class="mono">Diagram: one login, many applications</figcaption>
+                </figure>
+                <figure class="dlg__fig"><img src="aset/web/gaia-mockup.webp" width="1800" height="825" alt="Gaia Core system overview" loading="lazy"></figure>
+            </div>
+            <footer class="dlg__foot"><a class="btn btn--primary" href="studi-kasus-ui.html"><span>Read the UI/UX case study</span><svg class="i"><use href="#i-arrow"/></svg></a></footer>
+        </div>
+    </dialog>
+
+    <dialog class="dlg" id="dlg-mobile" aria-labelledby="dlg-mobile-t">
+        <div class="dlg__box">
+            <button class="dlg__close" type="button" data-close aria-label="Close dialog"><svg class="i"><use href="#i-close"/></svg></button>
+            <header class="dlg__head"><p class="tag">Mobile · Flutter · Android &amp; iOS</p><h3 id="dlg-mobile-t">TechTon PAS Mobile</h3><p class="lead">An employee self-service app built from scratch with Flutter. Employees handle attendance, requests and payslips straight from their phone.</p></header>
+            <div class="dlg__body">
+                <ol class="steps">
+                    <li><h4>SSO login + biometrics</h4><p>Sign in with the company SSO account, locked behind Fingerprint / Face ID and device security validation.</p></li>
+                    <li><h4>Photo attendance</h4><p>A personal dashboard and mobile attendance, with automatic compression of attendance photos so uploads stay light.</p></li>
+                    <li><h4>Requests &amp; supervisor approval</h4><p>Submit leave, permission and overtime requests. Supervisors approve directly inside the app.</p></li>
+                    <li><h4>PIN-protected payslips</h4><p>View and download PDF payslips at any time, protected by a PIN.</p></li>
+                    <li><h4>Released to iOS &amp; Android</h4><p>REST API secured and tested with Postman, released to iOS with a responsive layout for iPhone.</p></li>
+                </ol>
+                <figure class="dlg__fig dlg__fig--phone"><div class="phone phone--sm"><span class="phone__notch"></span><img src="aset/web/techton-mobile.webp" width="720" height="1456" alt="TechTon PAS Mobile home screen" loading="lazy"></div></figure>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="dlg" id="dlg-portal" aria-labelledby="dlg-portal-t">
+        <div class="dlg__box">
+            <button class="dlg__close" type="button" data-close aria-label="Close dialog"><svg class="i"><use href="#i-close"/></svg></button>
+            <header class="dlg__head"><p class="tag">Web · HRIS · Enterprise</p><h3 id="dlg-portal-t">TechTon HR Portal</h3><p class="lead">A web HRIS for HR and administrators: from attendance to payroll, with multi-level approval and tidy access control.</p></header>
+            <div class="dlg__body">
+                <ol class="steps">
+                    <li><h4>Controlled attendance</h4><p>Office locations, late indicators, unit and division filters, and per-employee reports with Excel / PDF export.</p></li>
+                    <li><h4>Tiered leave, permission &amp; overtime</h4><p>Multi-level approval flows that can be configured to match the company structure.</p></li>
+                    <li><h4>Payroll, loans &amp; period closing</h4><p>Salary components and formulas (AST), loans, and period closing with backdated-transaction validation.</p></li>
+                    <li><h4>Secure digital payslips</h4><p>PDF payslips with an anti-tamper watermark and PIN, available on web and mobile.</p></li>
+                    <li><h4>Fast and safe</h4><p>Server-side pagination for large datasets, <code>checkRBAC</code> on all controllers, and an AI chat assistant to help users.</p></li>
+                </ol>
+                <figure class="dlg__fig"><img src="aset/web/techton-portal.webp" width="1279" height="629" alt="TechTon HR Portal dashboard" loading="lazy"></figure>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="dlg" id="dlg-farm" aria-labelledby="dlg-farm-t">
+        <div class="dlg__box">
+            <button class="dlg__close" type="button" data-close aria-label="Close dialog"><svg class="i"><use href="#i-close"/></svg></button>
+            <header class="dlg__head"><p class="tag">Individual · Mobile · IoT · Research</p><h3 id="dlg-farm-t">Smart Farming IoT</h3><p class="lead">A mobile app that monitors farmland in real time from IoT sensors: temperature, soil moisture and light, plus a 5-day weather forecast. Designed with an interface friendly to traditional farmers.</p></header>
+            <div class="dlg__body">
+                <div class="metrics">
+                    <div class="metric"><b>86<small>/100</small></b><span>SUS usability score</span></div>
+                    <div class="metric"><b>Journal</b><span>Published in a scientific journal</span></div>
+                </div>
+                <ul class="spec spec--2"><li>IoT Integration</li><li>Temperature Monitoring</li><li>Humidity Monitoring</li><li>Light Intensity Monitoring</li><li>Data Visualization</li><li>Smart Agriculture</li></ul>
+                <figure class="dlg__fig dlg__fig--pair">
+                    <div class="phone phone--sm"><span class="phone__notch"></span><img src="aset/web/sf-home.webp" width="720" height="1446" alt="Smart Farm home screen" loading="lazy"></div>
+                    <div class="phone phone--sm"><span class="phone__notch"></span><img src="aset/web/sf-forecast.webp" width="720" height="1281" alt="Smart Farm 5-day forecast" loading="lazy"></div>
+                </figure>
+            </div>
+            <footer class="dlg__foot">
+                <a class="btn btn--primary" href="https://github.com/nrandran/smartfarm1.git" target="_blank" rel="noopener"><span>GitHub repo</span><svg class="i"><use href="#i-arrow-ur"/></svg></a>
+                <a class="btn btn--ghost" href="https://ijicom.respati.ac.id/index.php/ijicom/article/view/173" target="_blank" rel="noopener"><span>Read the journal</span><svg class="i"><use href="#i-arrow-ur"/></svg></a>
+            </footer>
+        </div>
+    </dialog>
+
+    <dialog class="dlg" id="dlg-smb" aria-labelledby="dlg-smb-t">
+        <div class="dlg__box">
+            <button class="dlg__close" type="button" data-close aria-label="Close dialog"><svg class="i"><use href="#i-close"/></svg></button>
+            <header class="dlg__head"><p class="tag">Website · CMS · SSO Portal</p><h3 id="dlg-smb-t">SMB-TGR Website &amp; SSO Portal</h3><p class="lead">The digital face of Toton Group: a responsive landing page with an easy CMS, plus an SSO portal for per-division applications.</p></header>
+            <div class="dlg__body">
+                <ol class="steps">
+                    <li><h4>Responsive landing page, PageSpeed 100</h4><p>Optimized to a Google PageSpeed score of 100, security hardened, and hosted by me.</p></li>
+                    <li><h4>CMS for non-technical teams</h4><p>Manage banners, business units, news and publications, and dynamic seasonal themes without touching code.</p></li>
+                    <li><h4>SSO portal per division</h4><p>Dashboards per division (HR, FAT, Agronomy, Cost Control and more) and a Drive-style file manager. Access follows the roles defined in GAIA.</p></li>
+                </ol>
+                <figure class="dlg__fig"><img src="aset/web/smb-landing.webp" width="1279" height="631" alt="SMB-TGR landing page" loading="lazy"></figure>
+                <figure class="dlg__fig"><img src="aset/web/smb-portal.webp" width="1279" height="629" alt="SMB-TGR SSO portal dashboard" loading="lazy"></figure>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="dlg" id="dlg-sta" aria-labelledby="dlg-sta-t">
+        <div class="dlg__box">
+            <button class="dlg__close" type="button" data-close aria-label="Close dialog"><svg class="i"><use href="#i-close"/></svg></button>
+            <header class="dlg__head"><p class="tag">Corporate website · Bilingual</p><h3 id="dlg-sta-t">STA — PT Sumber Toton Abadi</h3><p class="lead">The corporate website of the construction services company under Toton Group, presenting its services, strengths and projects in Indonesian and English.</p></header>
+            <div class="dlg__body">
+                <ol class="steps">
+                    <li><h4>Services</h4><p>Presents construction services across highways, drainage, ports, dams, bridge works, flyovers and buildings.</p></li>
+                    <li><h4>Company strengths</h4><p>An About section built around three ideas: structurally sound, superior in aesthetics, and valuable as an investment.</p></li>
+                    <li><h4>Structured navigation</h4><p>Home, About, Services, Advantages, Projects, News and Contact, with an ID / EN language switch.</p></li>
+                </ol>
+                <figure class="dlg__fig"><img src="aset/web/sta-1.webp" width="1279" height="634" alt="STA website home page" loading="lazy"></figure>
+                <figure class="dlg__fig"><img src="aset/web/sta-2.webp" width="1279" height="630" alt="STA website inner page" loading="lazy"></figure>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="dlg" id="dlg-hills" aria-labelledby="dlg-hills-t">
+        <div class="dlg__box">
+            <button class="dlg__close" type="button" data-close aria-label="Close dialog"><svg class="i"><use href="#i-close"/></svg></button>
+            <header class="dlg__head"><p class="tag">Property website · Lead generation</p><h3 id="dlg-hills-t">Toton Hills</h3><p class="lead">A marketing website for Toton Hills, a two-storey residential development in Jatiasih, Bekasi, built to turn visitors into brochure and price-list requests.</p></header>
+            <div class="dlg__body">
+                <ol class="steps">
+                    <li><h4>Why choose us</h4><p>Key selling points up front: two-storey homes, an inner garden, natural light and air in every room, and around 18% green open space.</p></li>
+                    <li><h4>House types &amp; pricing</h4><p>Three two-storey types presented as clear cards with starting prices.</p></li>
+                    <li><h4>Installment simulation</h4><p>A simulator that helps buyers estimate monthly installments before they get in touch.</p></li>
+                    <li><h4>Facilities, location &amp; FAQ</h4><p>Dedicated sections for facilities, location and frequently asked questions, with a floating WhatsApp call to action and an ID / EN switch.</p></li>
+                </ol>
+                <figure class="dlg__fig"><img src="aset/web/toton-hills-1.webp" width="1279" height="634" alt="Toton Hills website home page" loading="lazy"></figure>
+                <figure class="dlg__fig"><img src="aset/web/toton-hills-2.webp" width="1279" height="630" alt="Toton Hills website inner page" loading="lazy"></figure>
+            </div>
+        </div>
+    </dialog>
+
+</main>
+
+<footer class="footer">
+    <div class="wrap footer__in">
+        <a class="brand" href="#home" aria-label="Back to top">
+            <span class="brand__mark" aria-hidden="true"><b>N</b></span>
+            <span class="brand__name">Nurandra<br>Satya Adhi</span>
+        </a>
+        <nav class="footer__nav" aria-label="Footer">
+            <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#business">Business &amp; Creative</a><a href="studi-kasus-ui.html">UI/UX Case Study</a><a href="#contact">Contact</a>
+        </nav>
+        <p class="footer__copy mono">© 2026 Nurandra Satya Adhi · Yogyakarta, Indonesia</p>
+        <a class="footer__top mono" href="#home">Back to top <svg class="i"><use href="#i-arrow-ur"/></svg></a>
+    </div>
+</footer>
+
+<a class="wa-float" id="waFloat" href="https://wa.me/6289649185124?text=Hello%20Nurandra%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <span class="wa-float__ico" style="--icon:url(aset/tech/whatsapp.svg)" aria-hidden="true"></span><span>Chat with me</span>
+</a>
+
+<script src="script.js" defer></script>
+</body>
+</html>
