@@ -11,6 +11,9 @@
     const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    /* footer year always follows the current year */
+    $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+
     /* header turns solid after a little scrolling */
     const nav = $('#nav');
     if (nav) {
